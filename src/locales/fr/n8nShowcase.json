@@ -1,0 +1,75 @@
+{
+  "title": "Vitrine des Workflows N8N",
+  "search": {
+    "placeholder": "Rechercher titre, description ou auteur...",
+    "allLevels": "Tous les niveaux"
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "Automatisation de contenu et vidéo",
+    "SOCIAL_MEDIA": "Gestion des réseaux sociaux",
+    "DATA_PROCESSING": "Traitement des données",
+    "COMMUNICATION": "Communication et collaboration",
+    "FINANCE": "Gestion financière",
+    "MARKETING": "Marketing et promotion",
+    "DEVELOPMENT": "Développement et opérations",
+    "OTHER": "Autre"
+  },
+  "complexities": {
+    "SIMPLE": "Débutant",
+    "INTERMEDIATE": "Intermédiaire",
+    "ADVANCED": "Avancé",
+    "BUSINESS": "Business"
+  },
+  "status": {
+    "DRAFT": "Brouillon",
+    "PUBLISHED": "Publié",
+    "ARCHIVED": "Archivé"
+  },
+  "actions": {
+    "like": "Aimer",
+    "unlike": "Ne plus aimer",
+    "download": "Télécharger",
+    "copy": "Copier",
+    "viewDetails": "Voir les détails",
+    "loadMore": "Charger plus de workflows"
+  },
+  "messages": {
+    "likeSuccess": "Aimé avec succès",
+    "likeError": "Échec de l'ajout du like",
+    "unlikeSuccess": "Supprimé avec succès",
+    "unlikeError": "Échec de la suppression du like",
+    "copySuccess": "Copié avec succès",
+    "copyError": "Échec de la copie",
+    "downloadSuccess": "Téléchargé avec succès",
+    "downloadError": "Échec du téléchargement",
+    "loginRequired": "Connexion requise",
+    "loginToLike": "Veuillez vous connecter pour aimer des workflows",
+    "loginToDownload": "Veuillez vous connecter pour télécharger des workflows",
+    "workflowNotFound": "Workflow introuvable",
+    "featureInDevelopment": "Fonctionnalité en développement",
+    "downloadInProgress": "La fonction de téléchargement est en développement, restez à l'écoute"
+  },
+  "stats": {
+    "likes": "Likes",
+    "views": "Vues",
+    "downloads": "Téléchargements",
+    "author": "Auteur",
+    "updatedAt": "Mis à jour",
+    "uncategorized": "Non catégorisé"
+  },
+  "empty": {
+    "title": "Aucun workflow",
+    "description": "Aucun workflow trouvé correspondant à vos critères"
+  },
+  "auth": {
+    "loading": "Chargement...",
+    "profile": "Profil",
+    "manageWorkflows": "Gérer les workflows",
+    "subtitleLoggedIn": "Gérez vos workflows et découvrez de nouvelles opportunités d'automatisation",
+    "cta": {
+      "title": "Commencez à automatiser vos tâches",
+      "register": "Inscription gratuite",
+      "loginPrompt": "Vous avez déjà un compte ? Connectez-vous"
+    }
+  }
+}

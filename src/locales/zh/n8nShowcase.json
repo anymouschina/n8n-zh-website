@@ -1,0 +1,75 @@
+{
+  "title": "N8N工作流展示",
+  "search": {
+    "placeholder": "搜索标题、描述或作者...",
+    "allLevels": "全部级别"
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "内容与视频自动化",
+    "SOCIAL_MEDIA": "社交媒体管理",
+    "DATA_PROCESSING": "数据处理",
+    "COMMUNICATION": "沟通协作",
+    "FINANCE": "财务管理",
+    "MARKETING": "营销推广",
+    "DEVELOPMENT": "开发运维",
+    "OTHER": "其他"
+  },
+  "complexities": {
+    "SIMPLE": "入门",
+    "INTERMEDIATE": "进阶",
+    "ADVANCED": "高级",
+    "BUSINESS": "商业"
+  },
+  "status": {
+    "DRAFT": "草稿",
+    "PUBLISHED": "已发布",
+    "ARCHIVED": "已归档"
+  },
+  "actions": {
+    "like": "点赞",
+    "unlike": "取消点赞",
+    "download": "下载",
+    "copy": "复制",
+    "viewDetails": "查看详情",
+    "loadMore": "加载更多工作流"
+  },
+  "messages": {
+    "likeSuccess": "点赞成功",
+    "likeError": "点赞失败",
+    "unlikeSuccess": "取消点赞成功",
+    "unlikeError": "取消点赞失败",
+    "copySuccess": "复制成功",
+    "copyError": "复制失败",
+    "downloadSuccess": "下载成功",
+    "downloadError": "下载失败",
+    "loginRequired": "需要登录",
+    "loginToLike": "请先登录后再点赞",
+    "loginToDownload": "请先登录后再下载工作流",
+    "workflowNotFound": "工作流未找到",
+    "featureInDevelopment": "功能开发中",
+    "downloadInProgress": "下载功能正在开发中，敬请期待"
+  },
+  "stats": {
+    "likes": "点赞",
+    "views": "浏览",
+    "downloads": "下载",
+    "author": "作者",
+    "updatedAt": "更新时间",
+    "uncategorized": "未分类"
+  },
+  "empty": {
+    "title": "暂无工作流",
+    "description": "没有找到符合条件的工作流"
+  },
+  "auth": {
+    "loading": "加载中...",
+    "profile": "个人资料",
+    "manageWorkflows": "管理工作流",
+    "subtitleLoggedIn": "管理您的工作流并发现新的自动化机会",
+    "cta": {
+      "title": "开始自动化您的任务",
+      "register": "免费注册",
+      "loginPrompt": "已有账户？请登录"
+    }
+  }
+}

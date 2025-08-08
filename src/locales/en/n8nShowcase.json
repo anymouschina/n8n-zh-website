@@ -1,0 +1,75 @@
+{
+  "title": "N8N Workflow Showcase",
+  "search": {
+    "placeholder": "Search title, description or author...",
+    "allLevels": "All Levels"
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "Content & Video Automation",
+    "SOCIAL_MEDIA": "Social Media Management",
+    "DATA_PROCESSING": "Data Processing",
+    "COMMUNICATION": "Communication & Collaboration",
+    "FINANCE": "Financial Management",
+    "MARKETING": "Marketing & Promotion",
+    "DEVELOPMENT": "Development & Operations",
+    "OTHER": "Other"
+  },
+  "complexities": {
+    "SIMPLE": "Beginner",
+    "INTERMEDIATE": "Intermediate",
+    "ADVANCED": "Advanced",
+    "BUSINESS": "Business"
+  },
+  "status": {
+    "DRAFT": "Draft",
+    "PUBLISHED": "Published",
+    "ARCHIVED": "Archived"
+  },
+  "actions": {
+    "like": "Like",
+    "unlike": "Unlike",
+    "download": "Download",
+    "copy": "Copy",
+    "viewDetails": "View Details",
+    "loadMore": "Load More Workflows"
+  },
+  "messages": {
+    "likeSuccess": "Liked Successfully",
+    "likeError": "Like Failed",
+    "unlikeSuccess": "Unliked Successfully",
+    "unlikeError": "Unlike Failed",
+    "copySuccess": "Copied Successfully",
+    "copyError": "Copy Failed",
+    "downloadSuccess": "Downloaded Successfully",
+    "downloadError": "Download Failed",
+    "loginRequired": "Login Required",
+    "loginToLike": "Please login to like workflows",
+    "loginToDownload": "Please login to download workflows",
+    "workflowNotFound": "Workflow Not Found",
+    "featureInDevelopment": "Feature in Development",
+    "downloadInProgress": "Download feature is being developed, stay tuned"
+  },
+  "stats": {
+    "likes": "Likes",
+    "views": "Views",
+    "downloads": "Downloads",
+    "author": "Author",
+    "updatedAt": "Updated",
+    "uncategorized": "Uncategorized"
+  },
+  "empty": {
+    "title": "No Workflows",
+    "description": "No workflows found matching your criteria"
+  },
+  "auth": {
+    "loading": "Loading...",
+    "profile": "Profile",
+    "manageWorkflows": "Manage Workflows",
+    "subtitleLoggedIn": "Manage your workflows and discover new automation opportunities",
+    "cta": {
+      "title": "Start Automating Your Tasks",
+      "register": "Sign Up Free",
+      "loginPrompt": "Already have an account? Login"
+    }
+  }
+}

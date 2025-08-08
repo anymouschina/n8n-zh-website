@@ -1,0 +1,118 @@
+{
+  "list": {
+    "title": "Gestion des Workflows",
+    "searchPlaceholder": "Rechercher des workflows...",
+    "filterPlaceholder": {
+      "status": "Statut",
+      "category": "Catégorie",
+      "complexity": "Complexité"
+    },
+    "empty": "Aucun workflow",
+    "loading": "Chargement..."
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "Automatisation de contenu et vidéo",
+    "SOCIAL_MEDIA": "Gestion des réseaux sociaux",
+    "DATA_PROCESSING": "Traitement des données",
+    "COMMUNICATION": "Communication et collaboration",
+    "FINANCE": "Gestion financière",
+    "MARKETING": "Marketing et promotion",
+    "DEVELOPMENT": "Développement et opérations",
+    "OTHER": "Autre"
+  },
+  "complexities": {
+    "SIMPLE": "Débutant",
+    "INTERMEDIATE": "Intermédiaire",
+    "ADVANCED": "Avancé",
+    "BUSINESS": "Business"
+  },
+  "status": {
+    "DRAFT": "Brouillon",
+    "PUBLISHED": "Publié",
+    "ARCHIVED": "Archivé"
+  },
+  "actions": {
+    "view": "Voir",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "publish": "Publier",
+    "duplicate": "Dupliquer",
+    "export": "Exporter",
+    "create": "Créer un workflow"
+  },
+  "feedbacks": {
+    "deleteSuccess": {
+      "title": "Workflow supprimé",
+      "description": "Le workflow a été supprimé avec succès"
+    },
+    "deleteError": {
+      "title": "Échec de la suppression",
+      "description": "Impossible de supprimer le workflow"
+    },
+    "publishSuccess": {
+      "title": "Publié avec succès",
+      "description": "Le workflow a été publié avec succès"
+    },
+    "publishError": {
+      "title": "Échec de la publication",
+      "description": "Impossible de publier le workflow"
+    },
+    "duplicateSuccess": {
+      "title": "Dupliqué avec succès",
+      "description": "Le workflow a été dupliqué avec succès"
+    },
+    "duplicateError": {
+      "title": "Échec de la duplication",
+      "description": "Impossible de dupliquer le workflow"
+    },
+    "exportSuccess": {
+      "title": "Exporté avec succès",
+      "description": "Le fichier workflow a été téléchargé"
+    },
+    "exportError": {
+      "title": "Échec de l'export",
+      "description": "Impossible d'exporter le fichier workflow"
+    }
+  },
+  "stats": {
+    "total": "Total des workflows",
+    "published": "Publiés",
+    "likes": "Total des likes",
+    "views": "Vues",
+    "downloads": "Téléchargements"
+  },
+  "detail": {
+    "title": "Détails du workflow",
+    "preview": "Aperçu",
+    "noPreview": "Pas d'aperçu",
+    "tags": "Étiquettes",
+    "complexity": "Complexité",
+    "category": "Catégorie",
+    "author": "Auteur",
+    "updatedAt": "Mis à jour",
+    "description": "Description",
+    "useTemplate": "Utiliser le modèle",
+    "download": "Télécharger"
+  },
+  "create": {
+    "title": "Créer un workflow",
+    "name": {
+      "label": "Nom du workflow",
+      "placeholder": "Entrez le nom du workflow"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Décrivez ce que fait ce workflow"
+    },
+    "category": {
+      "label": "Catégorie"
+    },
+    "complexity": {
+      "label": "Complexité"
+    },
+    "tags": {
+      "label": "Étiquettes",
+      "placeholder": "Ajouter des étiquettes..."
+    }
+  }
+}

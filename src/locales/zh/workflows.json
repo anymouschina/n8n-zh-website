@@ -1,0 +1,118 @@
+{
+  "list": {
+    "title": "工作流管理",
+    "searchPlaceholder": "搜索工作流...",
+    "filterPlaceholder": {
+      "status": "状态",
+      "category": "分类",
+      "complexity": "复杂度"
+    },
+    "empty": "暂无工作流",
+    "loading": "加载中..."
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "内容与视频自动化",
+    "SOCIAL_MEDIA": "社交媒体管理",
+    "DATA_PROCESSING": "数据处理",
+    "COMMUNICATION": "沟通协作",
+    "FINANCE": "财务管理",
+    "MARKETING": "营销推广",
+    "DEVELOPMENT": "开发运维",
+    "OTHER": "其他"
+  },
+  "complexities": {
+    "SIMPLE": "入门",
+    "INTERMEDIATE": "进阶",
+    "ADVANCED": "高级",
+    "BUSINESS": "商业"
+  },
+  "status": {
+    "DRAFT": "草稿",
+    "PUBLISHED": "已发布",
+    "ARCHIVED": "已归档"
+  },
+  "actions": {
+    "view": "查看",
+    "edit": "编辑",
+    "delete": "删除",
+    "publish": "发布",
+    "duplicate": "复制",
+    "export": "导出",
+    "create": "创建工作流"
+  },
+  "feedbacks": {
+    "deleteSuccess": {
+      "title": "工作流已删除",
+      "description": "工作流已成功删除"
+    },
+    "deleteError": {
+      "title": "删除失败",
+      "description": "无法删除工作流"
+    },
+    "publishSuccess": {
+      "title": "发布成功",
+      "description": "工作流已成功发布"
+    },
+    "publishError": {
+      "title": "发布失败",
+      "description": "无法发布工作流"
+    },
+    "duplicateSuccess": {
+      "title": "复制成功",
+      "description": "工作流已成功复制"
+    },
+    "duplicateError": {
+      "title": "复制失败",
+      "description": "无法复制工作流"
+    },
+    "exportSuccess": {
+      "title": "导出成功",
+      "description": "工作流文件已下载"
+    },
+    "exportError": {
+      "title": "导出失败",
+      "description": "无法导出工作流文件"
+    }
+  },
+  "stats": {
+    "total": "总工作流",
+    "published": "已发布",
+    "likes": "总点赞数",
+    "views": "浏览量",
+    "downloads": "下载量"
+  },
+  "detail": {
+    "title": "工作流详情",
+    "preview": "预览图",
+    "noPreview": "无预览图",
+    "tags": "标签",
+    "complexity": "复杂度",
+    "category": "分类",
+    "author": "作者",
+    "updatedAt": "更新时间",
+    "description": "描述",
+    "useTemplate": "使用模板",
+    "download": "下载"
+  },
+  "create": {
+    "title": "创建工作流",
+    "name": {
+      "label": "工作流名称",
+      "placeholder": "输入工作流名称"
+    },
+    "description": {
+      "label": "描述",
+      "placeholder": "描述这个工作流的功能"
+    },
+    "category": {
+      "label": "分类"
+    },
+    "complexity": {
+      "label": "复杂度"
+    },
+    "tags": {
+      "label": "标签",
+      "placeholder": "添加标签..."
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "list": {
+    "title": "Workflow Management",
+    "searchPlaceholder": "Search workflows...",
+    "filterPlaceholder": {
+      "status": "Status",
+      "category": "Category",
+      "complexity": "Complexity"
+    },
+    "empty": "No workflows",
+    "loading": "Loading..."
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "Content & Video Automation",
+    "SOCIAL_MEDIA": "Social Media Management",
+    "DATA_PROCESSING": "Data Processing",
+    "COMMUNICATION": "Communication & Collaboration",
+    "FINANCE": "Financial Management",
+    "MARKETING": "Marketing & Promotion",
+    "DEVELOPMENT": "Development & Operations",
+    "OTHER": "Other"
+  },
+  "complexities": {
+    "SIMPLE": "Beginner",
+    "INTERMEDIATE": "Intermediate",
+    "ADVANCED": "Advanced",
+    "BUSINESS": "Business"
+  },
+  "status": {
+    "DRAFT": "Draft",
+    "PUBLISHED": "Published",
+    "ARCHIVED": "Archived"
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "publish": "Publish",
+    "duplicate": "Duplicate",
+    "export": "Export",
+    "create": "Create Workflow"
+  },
+  "feedbacks": {
+    "deleteSuccess": {
+      "title": "Workflow Deleted",
+      "description": "Workflow has been successfully deleted"
+    },
+    "deleteError": {
+      "title": "Deletion Failed",
+      "description": "Failed to delete workflow"
+    },
+    "publishSuccess": {
+      "title": "Published Successfully",
+      "description": "Workflow has been successfully published"
+    },
+    "publishError": {
+      "title": "Publication Failed",
+      "description": "Failed to publish workflow"
+    },
+    "duplicateSuccess": {
+      "title": "Duplicated Successfully",
+      "description": "Workflow has been successfully duplicated"
+    },
+    "duplicateError": {
+      "title": "Duplication Failed",
+      "description": "Failed to duplicate workflow"
+    },
+    "exportSuccess": {
+      "title": "Exported Successfully",
+      "description": "Workflow file has been downloaded"
+    },
+    "exportError": {
+      "title": "Export Failed",
+      "description": "Failed to export workflow file"
+    }
+  },
+  "stats": {
+    "total": "Total Workflows",
+    "published": "Published",
+    "likes": "Total Likes",
+    "views": "Views",
+    "downloads": "Downloads"
+  },
+  "detail": {
+    "title": "Workflow Details",
+    "preview": "Preview",
+    "noPreview": "No Preview",
+    "tags": "Tags",
+    "complexity": "Complexity",
+    "category": "Category",
+    "author": "Author",
+    "updatedAt": "Updated",
+    "description": "Description",
+    "useTemplate": "Use Template",
+    "download": "Download"
+  },
+  "create": {
+    "title": "Create Workflow",
+    "name": {
+      "label": "Workflow Name",
+      "placeholder": "Enter workflow name"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Describe what this workflow does"
+    },
+    "category": {
+      "label": "Category"
+    },
+    "complexity": {
+      "label": "Complexity"
+    },
+    "tags": {
+      "label": "Tags",
+      "placeholder": "Add tags..."
+    }
+  }
+}

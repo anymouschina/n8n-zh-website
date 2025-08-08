@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 import { trpc } from '@/lib/trpc/client';
 
 export const useSyncAccountLanguage = () => {
@@ -13,8 +14,10 @@ export const useSyncAccountLanguage = () => {
   const { i18n } = useTranslation();
   useEffect(() => {
     const updateLanguage = () => {
-      if (account.data?.language) {
-        i18n.changeLanguage(account.data.language);
+      // 如果用户有设置语言偏好，使用用户设置；否则使用默认语言（中文）
+      const languageToUse = account.data?.language || DEFAULT_LANGUAGE_KEY;
+      if (languageToUse) {
+        i18n.changeLanguage(languageToUse);
       }
     };
     i18n.on('initialized', updateLanguage);

@@ -1,7 +1,11 @@
-import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
-import { ROUTES_APP } from '@/features/app/routes';
+import { PageN8nShowcase } from '@/features/n8n-showcase/PageN8nShowcase';
 
 export default function Page() {
-  redirect(ROUTES_APP.root());
+  return (
+    <Suspense>
+      <PageN8nShowcase />
+    </Suspense>
+  );
 }

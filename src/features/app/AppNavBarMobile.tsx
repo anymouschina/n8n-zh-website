@@ -4,12 +4,11 @@ import { Box, BoxProps, Container, Flex } from '@chakra-ui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { LuFolderGit2, LuHome, LuUser } from 'react-icons/lu';
+import { LuFolderOpen, LuHeart, LuUser, LuUsers } from 'react-icons/lu';
 
 import { Icon } from '@/components/Icons';
 import { ROUTES_ACCOUNT } from '@/features/account/routes';
-import { ROUTES_APP } from '@/features/app/routes';
-import { ROUTES_REPOSITORIES } from '@/features/repositories/routes';
+import { ROUTES_WORKFLOWS } from '@/features/workflows/routes';
 
 const HEIGHT = 'calc(60px + env(safe-area-inset-bottom))';
 
@@ -41,17 +40,16 @@ export const AppNavBarMobile = (props: BoxProps) => {
       >
         <Container display="flex" flexDirection="row" w="full" flex={1}>
           <AppNavBarMobileMainMenuItem
-            icon={LuHome}
-            href={ROUTES_APP.root()}
-            isExact
+            icon={LuFolderOpen}
+            href={ROUTES_WORKFLOWS.app.root()}
           >
-            {t('app:layout.mainMenu.home')}
+            {t('app:layout.mainMenu.workflows')}
           </AppNavBarMobileMainMenuItem>
-          <AppNavBarMobileMainMenuItem
-            href={ROUTES_REPOSITORIES.app.root()}
-            icon={LuFolderGit2}
-          >
-            {t('app:layout.mainMenu.repositories')}
+          <AppNavBarMobileMainMenuItem href="/app/likes" icon={LuHeart}>
+            {t('app:layout.mainMenu.likes')}
+          </AppNavBarMobileMainMenuItem>
+          <AppNavBarMobileMainMenuItem href="/app/community" icon={LuUsers}>
+            {t('app:layout.mainMenu.community')}
           </AppNavBarMobileMainMenuItem>
           <AppNavBarMobileMainMenuItem
             icon={LuUser}
@@ -66,15 +64,15 @@ export const AppNavBarMobile = (props: BoxProps) => {
 };
 
 const AppNavBarMobileMainMenuItem = ({
-  href,
-  isExact,
   children,
+  href,
   icon,
+  isExact,
 }: {
   children: ReactNode;
-  isExact?: boolean;
   href: string;
-  icon: React.FC;
+  isExact?: boolean;
+  icon?: React.FC;
 }) => {
   const pathname = usePathname() ?? '';
   const isActive = isExact ? pathname === href : pathname.startsWith(href);
@@ -83,20 +81,30 @@ const AppNavBarMobileMainMenuItem = ({
     <Flex
       as={Link}
       href={href}
-      direction="column"
-      justifyContent="center"
-      position="relative"
-      fontWeight="medium"
-      alignItems="center"
-      opacity={isActive ? 1 : 0.4}
-      transition="0.2s"
-      pb={1}
+      bg="transparent"
       flex={1}
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      position="relative"
+      opacity={isActive ? 1 : 0.6}
+      fontWeight="semibold"
+      borderRadius="md"
+      p={2}
+      fontSize="xs"
+      gap={1}
+      transition="0.2s"
+      _hover={{
+        bg: 'gray.200',
+      }}
+      _dark={{
+        _hover: {
+          bg: 'gray.800',
+        },
+      }}
     >
-      <Icon fontSize="2xl" icon={icon} />
-      <Box fontSize="2xs" opacity={isActive ? 1 : 0.8} mt={-1.5}>
-        {children}
-      </Box>
+      {!!icon && <Icon fontSize="1.2em" icon={icon} />}
+      {children}
     </Flex>
   );
 };

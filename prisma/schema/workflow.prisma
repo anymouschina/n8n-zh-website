@@ -1,0 +1,107 @@
+enum WorkflowCategory {
+  CONTENT_AUTOMATION    // 内容与视频自动化
+  SOCIAL_MEDIA         // 社交媒体管理
+  DATA_PROCESSING      // 数据处理
+  COMMUNICATION        // 沟通协作
+  FINANCE              // 财务管理
+  MARKETING            // 营销推广
+  DEVELOPMENT          // 开发运维
+  OTHER                // 其他
+}
+
+enum WorkflowComplexity {
+  SIMPLE               // 简单流程/入门
+  INTERMEDIATE         // 中等复杂度/进阶
+  ADVANCED             // 高级自动化
+  BUSINESS             // 商业级别
+}
+
+enum WorkflowTriggerType {
+  SCHEDULED            // 定时触发
+  WEBHOOK              // Webhook触发
+  MANUAL               // 手动触发
+  EMAIL                // 邮件触发
+  FILE_CHANGE          // 文件变更
+  DATABASE_CHANGE      // 数据库变更
+  API_CALL             // API调用
+  OTHER                // 其他
+}
+
+enum WorkflowStatus {
+  DRAFT                // 草稿
+  PUBLISHED            // 已发布
+  ARCHIVED             // 已归档
+}
+
+model Workflow {
+  id            String              @id @default(cuid())
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  // 基本信息
+  title         String
+  description   String
+  category      WorkflowCategory
+  complexity    WorkflowComplexity
+  triggerType   WorkflowTriggerType
+  status        WorkflowStatus      @default(DRAFT)
+
+  // 工作流详情
+  nodeCount     Int                 @default(0)
+
+  // 预览图片
+  previewImage  String?
+
+  // N8N 工作流数据
+  workflowData  Json?               // 存储完整的 N8N 工作流 JSON
+
+  // 标签
+  tags          WorkflowTag[]
+
+  // 创建者信息
+  createdById   String
+  createdBy     User                @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  // 使用统计
+  viewCount     Int                 @default(0)
+  downloadCount Int                 @default(0)
+
+  // 点赞统计
+  likeCount     Int                 @default(0)
+  likes         WorkflowLike[]
+
+  @@index([category])
+  @@index([complexity])
+  @@index([triggerType])
+  @@index([status])
+  @@index([createdById])
+  @@index([likeCount])
+}
+
+model WorkflowLike {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+
+  // 用户信息
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // 工作流信息
+  workflowId String
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, workflowId])
+  @@index([userId])
+  @@index([workflowId])
+}
+
+model WorkflowTag {
+  id         String     @id @default(cuid())
+  name       String     @unique
+  color      String?    // 标签颜色
+  workflows  Workflow[]
+
+  @@index([name])
+}
+
+// 注意：需要在 user.prisma 中添加 workflows 关系字段

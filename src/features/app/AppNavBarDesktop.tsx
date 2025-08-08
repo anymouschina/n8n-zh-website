@@ -12,13 +12,12 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { LuFolderGit2, LuHome } from 'react-icons/lu';
+import { LuFolderOpen, LuHeart, LuUsers } from 'react-icons/lu';
 
 import { Icon } from '@/components/Icons';
 import { Logo } from '@/components/Logo';
 import { ROUTES_ACCOUNT } from '@/features/account/routes';
-import { ROUTES_APP } from '@/features/app/routes';
-import { ROUTES_REPOSITORIES } from '@/features/repositories/routes';
+import { ROUTES_WORKFLOWS } from '@/features/workflows/routes';
 import { trpc } from '@/lib/trpc/client';
 
 export const AppNavBarDesktop = (props: BoxProps) => {
@@ -38,17 +37,19 @@ export const AppNavBarDesktop = (props: BoxProps) => {
             </Box>
             <HStack flex={1} spacing={0}>
               <AppNavBarDesktopMainMenuItem
-                href={ROUTES_APP.root()}
-                isExact
-                icon={LuHome}
+                href={ROUTES_WORKFLOWS.app.root()}
+                icon={LuFolderOpen}
               >
-                {t('app:layout.mainMenu.home')}
+                {t('app:layout.mainMenu.workflows')}
+              </AppNavBarDesktopMainMenuItem>
+              <AppNavBarDesktopMainMenuItem href="/app/likes" icon={LuHeart}>
+                {t('app:layout.mainMenu.likes')}
               </AppNavBarDesktopMainMenuItem>
               <AppNavBarDesktopMainMenuItem
-                href={ROUTES_REPOSITORIES.app.root()}
-                icon={LuFolderGit2}
+                href="/app/community"
+                icon={LuUsers}
               >
-                {t('app:layout.mainMenu.repositories')}
+                {t('app:layout.mainMenu.community')}
               </AppNavBarDesktopMainMenuItem>
             </HStack>
             <Avatar

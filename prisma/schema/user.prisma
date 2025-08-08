@@ -26,4 +26,6 @@ model User {
   lastLoginAt     DateTime?
   session         Session[]
   oauth           OAuthAccount[]
+  workflows       Workflow[]
+  workflowLikes   WorkflowLike[]
 }

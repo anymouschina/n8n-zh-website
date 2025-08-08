@@ -1,13 +1,6 @@
-'use client';
-
-import { Suspense } from 'react';
-
-import PageHome from '@/features/app-home/PageHome';
+import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return (
-    <Suspense>
-      <PageHome />
-    </Suspense>
-  );
+  // 服务端重定向到工作流页面
+  redirect('/app/workflows');
 }

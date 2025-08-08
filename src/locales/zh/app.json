@@ -3,7 +3,10 @@
     "mainMenu": {
       "home": "首页",
       "repositories": "仓库",
-      "account": "账号"
+      "account": "账号",
+      "workflows": "我的工作流",
+      "likes": "点赞",
+      "community": "社区"
     }
   }
 }

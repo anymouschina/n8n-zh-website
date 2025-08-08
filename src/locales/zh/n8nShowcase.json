@@ -1,5 +1,6 @@
 {
   "title": "N8N工作流展示",
+  "subtitle": "这里有针对国内应用适配的各种n8n工作流，注册/登录后分享你的工作流",
   "search": {
     "placeholder": "搜索标题、描述或作者...",
     "allLevels": "全部级别"

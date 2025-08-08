@@ -1,70 +1,70 @@
 {
   "list": {
-    "title": "Repositories",
-    "empty": "No repositories",
+    "title": "仓库",
+    "empty": "暂无仓库",
     "actions": {
-      "createRepository": "Create Repository",
-      "view": "View"
+      "createRepository": "创建仓库",
+      "view": "查看"
     },
     "loadMore": {
-      "button": "Load more",
-      "display": "Showing {{loaded}} of {{total}} repositories"
+      "button": "加载更多",
+      "display": "显示 {{loaded}} / {{total}} 个仓库"
     }
   },
   "deleteModal": {
-    "title": "Confirm deleting the repository",
-    "message": "Would you like to delete \"{{name}}\" ? Delete will be permanent."
+    "title": "确认删除仓库",
+    "message": "您确定要删除 \"{{name}}\" 吗？删除将是永久性的。"
   },
   "feedbacks": {
     "deleteRepositoryError": {
-      "title": "Deletion Failed",
-      "description": "Fail to remove repository"
+      "title": "删除失败",
+      "description": "无法删除仓库"
     },
     "loadingRepositoryError": {
-      "title": "Failed to load repositories"
+      "title": "加载仓库失败"
     }
   },
   "data": {
     "name": {
-      "label": "Name",
-      "required": "Name is required",
-      "alreadyUsed": "Name already used"
+      "label": "名称",
+      "required": "名称为必填项",
+      "alreadyUsed": "名称已被使用"
     },
     "link": {
-      "label": "Link",
-      "required": "Link is required",
-      "tooSmall": "Invalid link, must be at least {{min}} characters",
-      "missingDot": "Invalid link, must contain at least a dot"
+      "label": "链接",
+      "required": "链接为必填项",
+      "tooSmall": "链接无效，至少需要 {{min}} 个字符",
+      "missingDot": "链接无效，必须包含至少一个点"
     },
     "description": {
-      "label": "Description"
+      "label": "描述"
     }
   },
   "update": {
     "action": {
-      "save": "Save"
+      "save": "保存"
     },
     "feedbacks": {
       "updateError": {
-        "title": "Update failed"
+        "title": "更新失败"
       },
       "updateSuccess": {
-        "title": "Updated with success"
+        "title": "更新成功"
       }
     }
   },
   "create": {
     "feedbacks": {
       "updateError": {
-        "title": "Creation failed"
+        "title": "创建失败"
       },
       "updateSuccess": {
-        "title": "Repository created with success"
+        "title": "仓库创建成功"
       }
     },
     "action": {
-      "save": "Create"
+      "save": "创建"
     },
-    "title": "New Repository"
+    "title": "新建仓库"
   }
 }

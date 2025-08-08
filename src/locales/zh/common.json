@@ -1,26 +1,27 @@
 {
   "languages": {
-    "en": "English",
-    "fr": "French",
-    "ar": "Arabic",
-    "sw": "Swahili"
+    "en": "英语",
+    "fr": "法语",
+    "ar": "阿拉伯语",
+    "sw": "斯瓦希里语",
+    "zh": "中文"
   },
   "actions": {
-    "back": "Back",
-    "activate": "Activate",
-    "cancel": "Cancel",
-    "deactivate": "Deactivate",
-    "delete": "Delete",
-    "edit": "Edit"
+    "back": "返回",
+    "activate": "激活",
+    "cancel": "取消",
+    "deactivate": "停用",
+    "delete": "删除",
+    "edit": "编辑"
   },
-  "or": "or",
+  "or": "或",
   "confirmDiscardChanges": {
-    "title": "Leave the page?",
-    "message": "You are about to leave the page without saving your changes.",
-    "confirmText": "Leave without saving",
-    "cancelText": "Stay on the page"
+    "title": "离开页面？",
+    "message": "您即将离开页面，未保存的更改将丢失。",
+    "confirmText": "不保存离开",
+    "cancelText": "留在页面"
   },
-  "filter": "Filter",
-  "clear": "Clear",
-  "submit": "Submit"
+  "filter": "筛选",
+  "clear": "清除",
+  "submit": "提交"
 }

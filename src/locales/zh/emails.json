@@ -1,62 +1,62 @@
 {
   "registerCode": {
-    "subject": "Verify your account",
-    "preview": "Your verification code",
-    "title": "Verify your account",
-    "hello": "Welcome {{name}},",
-    "intro": "Your account is almost ready! This is your verification code:",
-    "validityTime": "This code will only be valid for the next {{expiration}} minutes.",
-    "ignoreHelper": "If you didn't try to register, you can safely ignore this email."
+    "subject": "验证您的账号",
+    "preview": "您的验证码",
+    "title": "验证您的账号",
+    "hello": "欢迎 {{name}}，",
+    "intro": "您的账号即将准备就绪！这是您的验证码：",
+    "validityTime": "此验证码将在接下来的 {{expiration}} 分钟内有效。",
+    "ignoreHelper": "如果您没有尝试注册，可以安全地忽略此邮件。"
   },
   "registerEmailAlreadyUsed": {
-    "subject": "Account already exists",
-    "preview": "Your email is already used by another account",
-    "title": "Account already exists",
-    "hello": "Hi {{name}},",
-    "intro": "Your email {{email}} is already used, you can't create another account with it.",
-    "ignoreHelper": "If you didn't try to create an account, you can safely ignore this email."
+    "subject": "账号已存在",
+    "preview": "您的邮箱已被其他账号使用",
+    "title": "账号已存在",
+    "hello": "您好 {{name}}，",
+    "intro": "您的邮箱 {{email}} 已被使用，您无法再次创建账号。",
+    "ignoreHelper": "如果您没有尝试创建账号，可以安全地忽略此邮件。"
   },
   "loginCode": {
-    "subject": "Sign in verification code",
-    "preview": "Verification code to sign in",
-    "title": "Sign in verification code",
-    "hello": "Welcome back {{name}},",
-    "intro": "This is your verification code:",
-    "validityTime": "This code will only be valid for the next {{expiration}} minutes.",
-    "ignoreHelper": "If you didn't try to sign in, you can safely ignore this email."
+    "subject": "登录验证码",
+    "preview": "登录验证码",
+    "title": "登录验证码",
+    "hello": "欢迎回来 {{name}}，",
+    "intro": "这是您的验证码：",
+    "validityTime": "此验证码将在接下来的 {{expiration}} 分钟内有效。",
+    "ignoreHelper": "如果您没有尝试登录，可以安全地忽略此邮件。"
   },
   "loginNotFound": {
-    "subject": "Account not found",
-    "preview": "Is this the right email?",
-    "title": "Is this the right email?",
-    "intro": "It looks like there isn't an account tied to this email address.",
-    "button": "Try a different email",
-    "ignoreHelper": "If you didn't try to sign in, you can safely ignore this email."
+    "subject": "账号未找到",
+    "preview": "这是正确的邮箱吗？",
+    "title": "这是正确的邮箱吗？",
+    "intro": "看起来此邮箱地址没有关联的账号。",
+    "button": "尝试其他邮箱",
+    "ignoreHelper": "如果您没有尝试登录，可以安全地忽略此邮件。"
   },
   "emailUpdate": {
-    "subject": "Verification code",
-    "preview": "Change your email",
-    "title": "Your verification code",
-    "hello": "Hi {{name}},",
-    "intro": "This is the verification code to update your email:",
-    "validityTime": "This code will only be valid for the next {{expiration}} minutes.",
-    "ignoreHelper": "If you didn't try to change your email, you can safely ignore this email."
+    "subject": "验证码",
+    "preview": "更改您的邮箱",
+    "title": "您的验证码",
+    "hello": "您好 {{name}}，",
+    "intro": "这是更新您邮箱的验证码：",
+    "validityTime": "此验证码将在接下来的 {{expiration}} 分钟内有效。",
+    "ignoreHelper": "如果您没有尝试更改邮箱，可以安全地忽略此邮件。"
   },
   "emailUpdateAlreadyUsed": {
-    "subject": "Trying to update your email?",
-    "preview": "Your email is already used by another account",
-    "title": "Trying to update your email?",
-    "hello": "Hi {{name}},",
-    "intro": "Your email {{email}} is already used, you can't use it for another account.",
-    "ignoreHelper": "If you didn't try to change your email, you can safely ignore this email."
+    "subject": "尝试更新您的邮箱？",
+    "preview": "您的邮箱已被其他账号使用",
+    "title": "尝试更新您的邮箱？",
+    "hello": "您好 {{name}}，",
+    "intro": "您的邮箱 {{email}} 已被使用，您无法将其用于其他账号。",
+    "ignoreHelper": "如果您没有尝试更改邮箱，可以安全地忽略此邮件。"
   },
   "deleteAccountCode": {
-    "subject": "Delete your account",
-    "preview": "Verification code to delete your account",
-    "title": "Delete your account",
-    "hello": "{{name}}, you are about to delete your account. This will be permanent, be sure of what you are doing.",
-    "intro": "This is your verification code:",
-    "validityTime": "This code will only be valid for the next {{expiration}} minutes.",
-    "ignoreHelper": "If you didn't try to delete your account, you can safely ignore this email."
+    "subject": "删除您的账号",
+    "preview": "删除账号的验证码",
+    "title": "删除您的账号",
+    "hello": "{{name}}，您即将删除您的账号。此操作将是永久性的，请确认您的操作。",
+    "intro": "这是您的验证码：",
+    "validityTime": "此验证码将在接下来的 {{expiration}} 分钟内有效。",
+    "ignoreHelper": "如果您没有尝试删除账号，可以安全地忽略此邮件。"
   }
 }

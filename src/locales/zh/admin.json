@@ -1,22 +1,22 @@
 {
   "layout": {
     "mainMenu": {
-      "dashboard": "Dashboard",
-      "repositories": "Repositories",
-      "management": "Management"
+      "dashboard": "仪表板",
+      "repositories": "仓库",
+      "management": "管理"
     },
     "accountMenu": {
       "version": {
-        "copied": "Version copied",
-        "copy": "Copy version",
-        "label": "Version"
+        "copied": "版本已复制",
+        "copy": "复制版本",
+        "label": "版本"
       },
-      "apiDocs": "Api Documentation",
-      "openApp": "Open App",
-      "switchColorModeDark": "Switch to Dark Mode",
-      "switchColorModeLight": "Switch to Light Mode",
-      "myAccount": "My Account",
-      "logout": "Logout"
+      "apiDocs": "API文档",
+      "openApp": "打开应用",
+      "switchColorModeDark": "切换到深色模式",
+      "switchColorModeLight": "切换到浅色模式",
+      "myAccount": "我的账号",
+      "logout": "退出登录"
     }
   }
 }

@@ -1,83 +1,83 @@
 {
-  "title": "Account",
+  "title": "账号设置",
   "nav": {
-    "profile": "Profile",
-    "email": "Email",
-    "myAccount": "My Account"
+    "profile": "个人资料",
+    "email": "邮箱",
+    "myAccount": "我的账号"
   },
   "admin": {
-    "title": "Admin user",
-    "button": "Open Administration"
+    "title": "管理员用户",
+    "button": "打开管理后台"
   },
   "profile": {
-    "title": "Profile informations",
+    "title": "个人资料信息",
     "feedbacks": {
       "updateSuccess": {
-        "title": "Profile updated"
+        "title": "个人资料已更新"
       },
       "updateError": {
-        "title": "Update failed"
+        "title": "更新失败"
       }
     },
     "actions": {
-      "update": "Update"
+      "update": "更新"
     }
   },
   "email": {
-    "title": "Update your email",
+    "title": "更新您的邮箱",
     "feedbacks": {
       "updateSuccess": {
-        "title": "Email updated"
+        "title": "邮箱已更新"
       },
       "updateError": {
-        "title": "Update failed"
+        "title": "更新失败"
       }
     },
     "actions": {
-      "update": "Update"
+      "update": "更新"
     }
   },
   "preferences": {
-    "title": "Preferences",
+    "title": "偏好设置",
     "theme": {
-      "dark": "Dark mode",
-      "light": "Light mode"
+      "dark": "深色模式",
+      "light": "浅色模式"
     }
   },
   "logout": {
-    "button": "Logout",
+    "button": "退出登录",
     "confirm": {
-      "title": "Account logout",
-      "message": "You are about to end your session",
-      "button": "Logout"
+      "title": "账号登出",
+      "message": "您即将结束当前会话",
+      "button": "退出登录"
     }
   },
   "deleteAccount": {
-    "button": "Delete my account",
+    "button": "删除我的账号",
     "confirm": {
-      "title": "Delete my account",
-      "message": "You are about to delete your account. This will be permanent, be sure of what you are doing.",
-      "button": "Delete my account"
+      "title": "删除我的账号",
+      "message": "您即将删除您的账号。此操作将是永久性的，请确认您的操作。",
+      "button": "删除我的账号"
     },
     "validate": {
-      "button": "Delete my account"
+      "button": "删除我的账号"
     },
     "feedbacks": {
       "updateError": {
-        "title": "Something went wrong"
+        "title": "出了点问题"
       }
     }
   },
   "data": {
     "name": {
-      "label": "Name"
+      "label": "姓名"
     },
     "email": {
-      "label": "Email",
-      "current": "This is your current email"
+      "label": "邮箱",
+      "current": "这是您当前的邮箱"
     },
     "language": {
-      "label": "Language"
+      "label": "语言"
     }
   }
 }

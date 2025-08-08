@@ -1,12 +1,12 @@
 {
   "welcome": {
-    "title": "Welcome to 🚀 Start UI [web]",
-    "description": "An opinionated UI starter with React, Chakra UI, React Query & React Hook Form",
-    "author": "— From the <strong>BearStudio Team</strong>"
+    "title": "欢迎来到 🚀 Start UI [web]",
+    "description": "一个基于React、Chakra UI、React Query和React Hook Form的UI启动器",
+    "author": "— 来自 <strong>BearStudio团队</strong>"
   },
   "links": {
-    "github": "GitHub Repository",
-    "openIssue": "Open Issue",
-    "documentation": "Documentation"
+    "github": "GitHub仓库",
+    "openIssue": "提交问题",
+    "documentation": "文档"
   }
 }

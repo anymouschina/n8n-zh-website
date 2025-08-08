@@ -1,100 +1,100 @@
 {
   "datalist": {
-    "retry": "Retry",
-    "errorTitle": "Something went wrong",
-    "emptyTitle": "No Data",
-    "noResultsTitle": "No results for \"{{searchTerm}}\""
+    "retry": "重试",
+    "errorTitle": "出了点问题",
+    "emptyTitle": "暂无数据",
+    "noResultsTitle": "没有找到 \"{{searchTerm}}\" 的结果"
   },
   "dateAgo": {
     "format": "dddd, DD MMMM YYYY, hh:mm a"
   },
   "actionsButton": {
-    "label": "Actions"
+    "label": "操作"
   },
   "confirmMenuItem": {
-    "confirmText": "Click to confirm"
+    "confirmText": "点击确认"
   },
   "confirmModal": {
-    "confirmText": "Confirm",
-    "heading": "Are you sure?"
+    "confirmText": "确认",
+    "heading": "您确定吗？"
   },
   "confirmPopover": {
-    "confirmText": "Confirm",
-    "heading": "Are you sure?"
+    "confirmText": "确认",
+    "heading": "您确定吗？"
   },
   "errorBoundary": {
-    "title": "An unexpected error has occurred.",
+    "title": "发生了意外错误。",
     "actions": {
-      "expand": "Show details"
+      "expand": "显示详情"
     }
   },
   "errorPage": {
     "403": {
-      "title": "Unauthorized",
-      "description": "Sorry, you can't access this page."
+      "title": "未授权",
+      "description": "抱歉，您无法访问此页面。"
     },
     "404": {
-      "title": "Page not found",
-      "description": "The page does not exist or the url has changed."
+      "title": "页面未找到",
+      "description": "页面不存在或URL已更改。"
     },
-    "errorCode": "Error {{code}}",
+    "errorCode": "错误 {{code}}",
     "default": {
-      "title": "Error",
-      "description": "Something went wrong 😞"
+      "title": "错误",
+      "description": "出了点问题 😞"
     }
   },
   "pagination": {
-    "showing": "<box>Showing</box> <strong>{{firstItemOnPage}}</strong> <span>to</span> <strong>{{lastItemOnPage}}</strong> <span>of</span> <strong>{{totalItems}}</strong> <box>results</box>",
-    "loading": "<spinner></spinner> <box>Loading</box> <strong>{{firstItemOnPage}}</strong> <span>to</span> <strong>{{lastItemOnPage}}</strong> <span>of</span> <strong>{{totalItems}}</strong> <box>results</box>",
-    "firstPage": "First Page",
-    "prevPage": "Previous Page",
-    "lastPage": "Last Page",
-    "nextPage": "Next Page"
+    "showing": "<box>显示</box> <strong>{{firstItemOnPage}}</strong> <span>到</span> <strong>{{lastItemOnPage}}</strong> <span>共</span> <strong>{{totalItems}}</strong> <box>条结果</box>",
+    "loading": "<spinner></spinner> <box>加载中</box> <strong>{{firstItemOnPage}}</strong> <span>到</span> <strong>{{lastItemOnPage}}</strong> <span>共</span> <strong>{{totalItems}}</strong> <box>条结果</box>",
+    "firstPage": "首页",
+    "prevPage": "上一页",
+    "lastPage": "末页",
+    "nextPage": "下一页"
   },
   "searchInput": {
-    "placeholder": "Search...",
-    "clear": "Clear Search"
+    "placeholder": "搜索...",
+    "clear": "清除搜索"
   },
   "formField": {
-    "optional": "Optional"
+    "optional": "可选"
   },
   "fieldDayPicker": {
-    "invalidMessage": "Invalid date"
+    "invalidMessage": "日期无效"
   },
   "fieldMultiSelect": {
-    "noOption": "No option"
+    "noOption": "无选项"
   },
   "sort": {
-    "sortAscending": "Ascending",
-    "sortDescending": "Descending",
-    "sortBy": "Sort by",
-    "order": "Order"
+    "sortAscending": "升序",
+    "sortDescending": "降序",
+    "sortBy": "排序方式",
+    "order": "排序"
   },
   "dayPicker": {
-    "today": "Today"
+    "today": "今天"
   },
   "monthPicker": {
-    "today": "Today",
+    "today": "今天",
     "months": {
-      "january": "January",
-      "february": "February",
-      "march": "March",
-      "april": "April",
-      "may": "May",
-      "june": "June",
-      "july": "July",
-      "august": "August",
-      "september": "September",
-      "october": "October",
-      "november": "November",
-      "december": "December"
+      "january": "一月",
+      "february": "二月",
+      "march": "三月",
+      "april": "四月",
+      "may": "五月",
+      "june": "六月",
+      "july": "七月",
+      "august": "八月",
+      "september": "九月",
+      "october": "十月",
+      "november": "十一月",
+      "december": "十二月"
     }
   },
   "fieldPassword": {
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+    "showPassword": "显示密码",
+    "hidePassword": "隐藏密码"
   },
   "toast": {
-    "closeToast": "Close message"
+    "closeToast": "关闭消息"
   }
 }

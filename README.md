@@ -1,3 +1,72 @@
+# n8n 中文社区 / n8n Chinese Community
+
+欢迎来到 n8n 中文社区！这是一个专注于 n8n 自动化工作流的中文资源与交流平台。  
+Welcome to the n8n Chinese Community! This is a platform dedicated to sharing resources and discussions about n8n automation workflows in Chinese.
+
+---
+
+## 目录 / Contents
+
+- [关于社区 / About](#关于社区--about)  
+- [功能 / Features](#功能--features)  
+- [快速开始 / Getting Started](#快速开始--getting-started)  
+- [贡献 / Contributing](#贡献--contributing)  
+- [联系 / Contact](#联系--contact)  
+- [许可证 / License](#许可证--license)  
+
+---
+
+## 关于社区 / About
+
+n8n 中文社区致力于为中文用户提供丰富的 n8n 工作流模板、教程、以及交流平台，帮助用户更高效地使用 n8n。  
+The n8n Chinese Community aims to provide rich workflow templates, tutorials, and a discussion platform for Chinese users to use n8n more effectively.
+
+---
+
+## 功能 / Features
+
+- 提供多样的 n8n 中文工作流模板 / Provide diverse n8n workflow templates in Chinese  
+- 支持用户上传和分享工作流 / Allow users to upload and share workflows  
+- 丰富的中文教程和使用指南 / Rich Chinese tutorials and usage guides  
+- 社区讨论与支持 / Community discussion and support  
+
+---
+
+## 快速开始 / Getting Started
+
+1. 访问网站：https://n8n.beqlee.icu
+2. 注册并登录（支持 GitHub 登录） / Register and login (GitHub login supported)  
+3. 浏览并下载工作流模板 / Browse and download workflow templates  
+4. 上传并分享你的工作流 / Upload and share your workflows  
+
+---
+
+## 贡献 / Contributing
+
+欢迎贡献模板、教程和建议！  
+We welcome contributions of templates, tutorials, and suggestions!
+
+请阅读 [贡献指南](CONTRIBUTING.md) 了解详细流程。  
+Please read our [Contributing Guide](CONTRIBUTING.md) for details.
+
+---
+
+## 联系 / Contact
+
+邮箱 / Email: lbq11147@gmail.com
+微信 / WeChat : lbq11147
+小红书 / RedNote : 做老六的beq
+
+---
+
+## 许可证 / License
+
+本项目采用 MIT 许可证 / This project is licensed under the MIT License.
+
+---
+
+*感谢你的关注和支持！ / Thanks for your attention and support!*
+### 怎么运行？ 项目是基于 start-ui 创建
 <h1 align="center"><img src=".github/assets/thumbnail.png" alt="Start UI Web" /></h1>
 
 [![Discord](https://img.shields.io/discord/452798408491663361)](https://go.bearstudio.fr/discord)

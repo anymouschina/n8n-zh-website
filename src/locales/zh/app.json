@@ -1,9 +1,9 @@
 {
   "layout": {
     "mainMenu": {
-      "home": "Home",
-      "repositories": "Repositories",
-      "account": "Account"
+      "home": "首页",
+      "repositories": "仓库",
+      "account": "账号"
     }
   }
 }

@@ -54,7 +54,7 @@ export default function PageRegister() {
     defaultValues: {
       name: '',
       email: '',
-      language: i18n.language,
+      language: 'zh',
     },
   });
 

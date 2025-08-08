@@ -1,101 +1,101 @@
 {
-  "you": "you",
+  "you": "您",
   "list": {
-    "title": "Users Management",
-    "status": "Status",
+    "title": "用户管理",
+    "status": "状态",
     "actions": {
-      "createUser": "Create User"
+      "createUser": "创建用户"
     },
     "loadMore": {
-      "button": "Load more",
-      "display": "Showing {{loaded}} of {{total}} users"
+      "button": "加载更多",
+      "display": "显示 {{loaded}} / {{total}} 个用户"
     }
   },
   "deleteModal": {
-    "title": "Confirm deleting the user",
-    "message": "Would you like to delete \"{{name}}\" ? Delete will be permanent."
+    "title": "确认删除用户",
+    "message": "您确定要删除 \"{{name}}\" 吗？删除将是永久性的。"
   },
   "feedbacks": {
     "activateUserSuccess": {
-      "title": "User Activated",
-      "description": "User \"{{login}}\" activated with success"
+      "title": "用户已激活",
+      "description": "用户 \"{{login}}\" 已成功激活"
     },
     "deactivateUserSuccess": {
-      "title": "User Deactivated",
-      "description": "User \"{{login}}\" deactivated with success"
+      "title": "用户已停用",
+      "description": "用户 \"{{login}}\" 已成功停用"
     },
     "activateUserError": {
-      "title": "Activation Failed",
-      "description": "Fail to activate \"{{login}}\" user"
+      "title": "激活失败",
+      "description": "无法激活用户 \"{{login}}\""
     },
     "deactivateUserError": {
-      "title": "Deactivation Failed",
-      "description": "Fail to deactivate \"{{login}}\" user"
+      "title": "停用失败",
+      "description": "无法停用用户 \"{{login}}\""
     },
     "deleteUserError": {
-      "title": "Deletion Failed",
-      "description": "Fail to remove \"{{login}}\" user"
+      "title": "删除失败",
+      "description": "无法删除用户 \"{{login}}\""
     },
     "loadingUserError": {
-      "title": "Failed to load users"
+      "title": "加载用户失败"
     }
   },
   "data": {
     "email": {
-      "label": "Email",
-      "alreadyUsed": "Email already used",
-      "required": "Email is required",
-      "invalid": "Email is invalid"
+      "label": "邮箱",
+      "alreadyUsed": "邮箱已被使用",
+      "required": "邮箱为必填项",
+      "invalid": "邮箱格式无效"
     },
     "authorizations": {
-      "label": "Authorizations",
-      "required": "At least one authorization is required",
+      "label": "权限",
+      "required": "至少需要一项权限",
       "options": {
-        "APP": "App",
-        "ADMIN": "Admin"
+        "APP": "应用",
+        "ADMIN": "管理员"
       }
     },
     "createdAt": {
-      "ago": "Created <dateAgo />"
+      "ago": "创建于 <dateAgo />"
     },
     "status": {
-      "activated": "Activated",
-      "deactivated": "Not Activated"
+      "activated": "已激活",
+      "deactivated": "未激活"
     },
     "name": {
-      "label": "Name",
-      "required": "Name is required",
-      "invalid": "Name is invalid"
+      "label": "姓名",
+      "required": "姓名为必填项",
+      "invalid": "姓名格式无效"
     },
     "language": {
-      "label": "Language"
+      "label": "语言"
     }
   },
   "update": {
     "action": {
-      "save": "Save"
+      "save": "保存"
     },
     "feedbacks": {
       "updateError": {
-        "title": "Update failed"
+        "title": "更新失败"
       },
       "updateSuccess": {
-        "title": "Updated with success"
+        "title": "更新成功"
       }
     }
   },
   "create": {
     "feedbacks": {
       "updateError": {
-        "title": "Creation failed"
+        "title": "创建失败"
       },
       "updateSuccess": {
-        "title": "User created with success"
+        "title": "用户创建成功"
       }
     },
     "action": {
-      "save": "Create"
+      "save": "创建"
     },
-    "title": "New User"
+    "title": "新建用户"
   }
 }

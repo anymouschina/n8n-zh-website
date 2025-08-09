@@ -255,7 +255,7 @@ export default function Page() {
         : undefined,
     };
 
-    updateWorkflowMutation.mutate(submitData as any);
+    updateWorkflowMutation.mutate(submitData);
   };
 
   // 发布工作流

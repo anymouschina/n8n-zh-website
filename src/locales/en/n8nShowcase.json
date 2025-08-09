@@ -1,5 +1,6 @@
 {
   "title": "N8N Workflow Showcase",
+  "subtitle": "Discover various n8n workflows adapted for domestic applications. Register/login to share your workflows",
   "search": {
     "placeholder": "Search title, description or author...",
     "allLevels": "All Levels"

@@ -1,0 +1,76 @@
+{
+  "title": "Maonyesho ya Njia za Kazi za N8N",
+  "subtitle": "Gundua njia mbalimbali za kazi za n8n zilizoboreshwa kwa matumizi ya ndani. Jiandikishe/ingia kugawiza kazi zako",
+  "search": {
+    "placeholder": "Tafuta majina, maelezo au waandishi...",
+    "allLevels": "Viwango vyote"
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "Uuzaji wa Maudhui na Video",
+    "SOCIAL_MEDIA": "Usimamizi wa Mitandao ya Kijamii",
+    "DATA_PROCESSING": "Usindikaji wa Data",
+    "COMMUNICATION": "Mawasiliano na Ushirikiano",
+    "FINANCE": "Usimamizi wa Fedha",
+    "MARKETING": "Masoko na Matangazo",
+    "DEVELOPMENT": "Maendeleo na Uendeshaji",
+    "OTHER": "Nyingine"
+  },
+  "complexities": {
+    "SIMPLE": "Mwanzo",
+    "INTERMEDIATE": "Kati",
+    "ADVANCED": "Juu",
+    "BUSINESS": "Biashara"
+  },
+  "status": {
+    "DRAFT": "Rasimu",
+    "PUBLISHED": "Imechapishwa",
+    "ARCHIVED": "Imeahirishwa"
+  },
+  "actions": {
+    "like": "Penda",
+    "unlike": "Sitopenda",
+    "download": "Pakua",
+    "copy": "Nakili",
+    "viewDetails": "Angalia Maelezo",
+    "loadMore": "Pakia Kazi Zaidi"
+  },
+  "messages": {
+    "likeSuccess": "Imependwa kwa mafanikio",
+    "likeError": "Imeshindwa kupenda",
+    "unlikeSuccess": "Imesitopendwa kwa mafanikio",
+    "unlikeError": "Imeshindwa kusitopenda",
+    "copySuccess": "Imenakiliwa kwa mafanikio",
+    "copyError": "Imeshindwa kunakili",
+    "downloadSuccess": "Imepakuliwa kwa mafanikio",
+    "downloadError": "Imeshindwa kupakua",
+    "loginRequired": "Unganisha Kuanzia",
+    "loginToLike": "Tafadhali ingia kupenda kazi",
+    "loginToDownload": "Tafadhali ingia kupakua kazi",
+    "workflowNotFound": "Kazi Haipatikani",
+    "featureInDevelopment": "Kipengele Kinachotengenezwa",
+    "downloadInProgress": "Kipengele cha kupakua kinatengenezwa, subiri matangazo"
+  },
+  "stats": {
+    "likes": "Mapenda",
+    "views": "Mitazamo",
+    "downloads": "Mapakuzi",
+    "author": "Mwandishi",
+    "updatedAt": "Imesasishwa",
+    "uncategorized": "Haijatatuliwa"
+  },
+  "empty": {
+    "title": "Hakuna Kazi",
+    "description": "Hakuna kazi zinazolingana na vigezo vyako"
+  },
+  "auth": {
+    "loading": "Inapakia...",
+    "profile": "Wasifu",
+    "manageWorkflows": "Simamia Kazi",
+    "subtitleLoggedIn": "Simamia kazi zako na gundua fursa mpya za uuzaji",
+    "cta": {
+      "title": "Anza Kuziuza Kazi Zako",
+      "register": "Jisajili Bila Malipo",
+      "loginPrompt": "Tayari una akaunti? Ingia"
+    }
+  }
+}

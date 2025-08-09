@@ -62,7 +62,7 @@ export function PageN8nShowcase() {
   const { t } = useTranslation(['common', 'n8nShowcase']);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedComplexity, setSelectedComplexity] = useState('全部级别');
-  const [selectedWorkflow, setSelectedWorkflow] = useState<any>(null);
+  const [selectedWorkflow, setSelectedWorkflow] = useState(null);
 
   // Modal controls
   const {
@@ -120,7 +120,7 @@ export function PageN8nShowcase() {
       });
       refetchWorkflows();
     },
-    onError: (error: any) => {
+    onError: (error) => {
       if (error.data?.code === 'UNAUTHORIZED') {
         toast({
           title: '需要登录才能点赞',
@@ -151,7 +151,7 @@ export function PageN8nShowcase() {
       });
       refetchWorkflows();
     },
-    onError: (error: any) => {
+    onError: (error) => {
       if (error.data?.code === 'UNAUTHORIZED') {
         toast({
           title: '需要登录才能取消点赞',
@@ -191,8 +191,9 @@ export function PageN8nShowcase() {
       !searchTerm ||
       workflow.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       workflow.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      workflow.author?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      workflow.authorName?.toLowerCase().includes(searchTerm.toLowerCase());
+      workflow.createdBy?.name
+        ?.toLowerCase()
+        .includes(searchTerm.toLowerCase());
 
     // 将数据库的英文复杂度转换为中文复杂度进行比较
     const workflowComplexityDisplay =
@@ -230,7 +231,7 @@ export function PageN8nShowcase() {
       }
 
       // 查找对应的工作流
-      const workflow = filteredWorkflows.find((w: any) => w.id === workflowId);
+      const workflow = filteredWorkflows.find((w) => w.id === workflowId);
       if (!workflow) {
         toast({
           title: '工作流未找到',
@@ -264,9 +265,12 @@ export function PageN8nShowcase() {
         // 如果有工作流数据，添加模板元信息
         workflowDataToUse = {
           ...workflowDataToUse,
-          name: workflow.title || workflowDataToUse.name || 'Imported Workflow',
+          name:
+            workflow.title ||
+            (workflowDataToUse as any).name ||
+            'Imported Workflow',
           meta: {
-            ...workflowDataToUse.meta,
+            ...(workflowDataToUse as any).meta,
             templateId: workflow.id,
             templateTitle: workflow.title,
             templateDescription: workflow.description,
@@ -517,9 +521,9 @@ export function PageN8nShowcase() {
                       height={200}
                       interactive={false}
                     />
-                  ) : workflow.image ? (
+                  ) : (workflow as any).previewImage ? (
                     <Image
-                      src={workflow.image}
+                      src={(workflow as any).previewImage}
                       alt={workflow.title}
                       w="full"
                       h="full"

@@ -11,6 +11,7 @@ import common from './common.json';
 import components from './components.json';
 import emails from './emails.json';
 import management from './management.json';
+import n8nShowcase from './n8nShowcase.json';
 import repositories from './repositories.json';
 import users from './users.json';
 
@@ -25,6 +26,7 @@ export default {
   components,
   emails,
   management,
+  n8nShowcase,
   repositories,
   users,
   zod,

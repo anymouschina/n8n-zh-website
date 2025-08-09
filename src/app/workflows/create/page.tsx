@@ -221,8 +221,24 @@ export default function Page() {
         | 'ADVANCED'
         | 'BUSINESS',
       status: formData.status as 'DRAFT' | 'PUBLISHED',
-      category: formData.category as any,
-      triggerType: formData.triggerType as any,
+      category: formData.category as
+        | 'CONTENT_AUTOMATION'
+        | 'SOCIAL_MEDIA'
+        | 'DATA_PROCESSING'
+        | 'COMMUNICATION'
+        | 'FINANCE'
+        | 'MARKETING'
+        | 'DEVELOPMENT'
+        | 'OTHER',
+      triggerType: formData.triggerType as
+        | 'SCHEDULED'
+        | 'WEBHOOK'
+        | 'MANUAL'
+        | 'EMAIL'
+        | 'FILE_CHANGE'
+        | 'DATABASE_CHANGE'
+        | 'API_CALL'
+        | 'OTHER',
       tags,
       workflowData: formData.workflowData
         ? JSON.parse(formData.workflowData)

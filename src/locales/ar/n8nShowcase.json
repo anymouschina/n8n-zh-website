@@ -1,0 +1,76 @@
+{
+  "title": "معرض سير العمل N8N",
+  "subtitle": "اكتشف سير عمل n8n المختلفة المخصصة للتطبيقات المحلية. سجل/سجل الدخول لمشاركة سير العمل الخاصة بك",
+  "search": {
+    "placeholder": "ابحث عن عنوان، وصف أو مؤلف...",
+    "allLevels": "جميع المستويات"
+  },
+  "categories": {
+    "CONTENT_AUTOMATION": "أتمتة المحتوى والفيديو",
+    "SOCIAL_MEDIA": "إدارة وسائل التواصل الاجتماعي",
+    "DATA_PROCESSING": "معالجة البيانات",
+    "COMMUNICATION": "التواصل والتعاون",
+    "FINANCE": "الإدارة المالية",
+    "MARKETING": "التسويق والترويج",
+    "DEVELOPMENT": "التطوير والعمليات",
+    "OTHER": "أخرى"
+  },
+  "complexities": {
+    "SIMPLE": "مبتدئ",
+    "INTERMEDIATE": "متوسط",
+    "ADVANCED": "متقدم",
+    "BUSINESS": "تجاري"
+  },
+  "status": {
+    "DRAFT": "مسودة",
+    "PUBLISHED": "منشور",
+    "ARCHIVED": "مؤرشف"
+  },
+  "actions": {
+    "like": "إعجاب",
+    "unlike": "إلغاء الإعجاب",
+    "download": "تحميل",
+    "copy": "نسخ",
+    "viewDetails": "عرض التفاصيل",
+    "loadMore": "تحميل المزيد من سير العمل"
+  },
+  "messages": {
+    "likeSuccess": "تم الإعجاب بنجاح",
+    "likeError": "فشل الإعجاب",
+    "unlikeSuccess": "تم إلغاء الإعجاب بنجاح",
+    "unlikeError": "فشل إلغاء الإعجاب",
+    "copySuccess": "تم النسخ بنجاح",
+    "copyError": "فشل النسخ",
+    "downloadSuccess": "تم التحميل بنجاح",
+    "downloadError": "فشل التحميل",
+    "loginRequired": "تسجيل الدخول مطلوب",
+    "loginToLike": "يرجى تسجيل الدخول للإعجاب بسير العمل",
+    "loginToDownload": "يرجى تسجيل الدخول لتحميل سير العمل",
+    "workflowNotFound": "سير العمل غير موجود",
+    "featureInDevelopment": "الميزة قيد التطوير",
+    "downloadInProgress": "ميزة التحميل قيد التطوير، ترقب التحديثات"
+  },
+  "stats": {
+    "likes": "الإعجابات",
+    "views": "المشاهدات",
+    "downloads": "التحميلات",
+    "author": "المؤلف",
+    "updatedAt": "تم التحديث",
+    "uncategorized": "غير مصنف"
+  },
+  "empty": {
+    "title": "لا توجد سير عمل",
+    "description": "لم يتم العثور على سير عمل تطابق معاييرك"
+  },
+  "auth": {
+    "loading": "جاري التحميل...",
+    "profile": "الملف الشخصي",
+    "manageWorkflows": "إدارة سير العمل",
+    "subtitleLoggedIn": "إدارة سير العمل الخاصة بك واكتشاف فرص أتمتة جديدة",
+    "cta": {
+      "title": "ابدأ أتمتة مهامك",
+      "register": "التسجيل المجاني",
+      "loginPrompt": "هل لديك حساب؟ سجل الدخول"
+    }
+  }
+}

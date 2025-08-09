@@ -22,7 +22,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { LuClock, LuDownload, LuEye, LuGitFork, LuHeart } from 'react-icons/lu';
+import { LuDownload, LuEye, LuGitFork, LuHeart } from 'react-icons/lu';
 
 import { Icon } from '@/components/Icons';
 import WorkflowDetailModal from '@/components/WorkflowDetailModal';
@@ -39,7 +39,24 @@ const complexityMap = {
 } as const;
 
 export default function Page() {
-  const [selectedWorkflow, setSelectedWorkflow] = useState<any>(null);
+  const [selectedWorkflow, setSelectedWorkflow] = useState<{
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    complexity: string;
+    triggerType: string;
+    nodeCount: number;
+    viewCount: number;
+    downloadCount: number;
+    createdAt: string | Date;
+    createdBy?: {
+      name?: string | null;
+    } | null;
+    tags?: string[];
+    previewImage?: string | null;
+    workflowData?: unknown;
+  } | null>(null);
   const toast = useToast();
 
   // Modal controls
@@ -67,7 +84,7 @@ export default function Page() {
       });
       refetchLikedWorkflows();
     },
-    onError: (error: any) => {
+    onError: (error) => {
       toast({
         title: '取消点赞失败',
         description: error.message,
@@ -85,7 +102,24 @@ export default function Page() {
   const likedWorkflows = likedWorkflowsData?.items || [];
 
   // 处理查看详情
-  const handleViewDetails = (workflow: any) => {
+  const handleViewDetails = (workflow: {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    complexity: string;
+    triggerType: string;
+    nodeCount: number;
+    viewCount: number;
+    downloadCount: number;
+    createdAt: string | Date;
+    createdBy?: {
+      name?: string | null;
+    } | null;
+    tags?: string[];
+    previewImage?: string | null;
+    workflowData?: unknown;
+  }) => {
     setSelectedWorkflow(workflow);
     onDetailModalOpen();
   };
@@ -106,7 +140,7 @@ export default function Page() {
       }
 
       // 查找对应的工作流
-      const workflow = likedWorkflows.find((w: any) => w.id === workflowId);
+      const workflow = likedWorkflows.find((w) => w.id === workflowId);
       if (!workflow) {
         toast({
           title: '工作流未找到',
@@ -138,9 +172,12 @@ export default function Page() {
       } else {
         workflowDataToUse = {
           ...workflowDataToUse,
-          name: workflow.title || workflowDataToUse.name || 'Imported Workflow',
+          name:
+            workflow.title ||
+            (workflowDataToUse as { name?: string }).name ||
+            'Imported Workflow',
           meta: {
-            ...workflowDataToUse.meta,
+            ...(workflowDataToUse as { meta?: Record<string, unknown> }).meta,
             templateId: workflow.id,
             templateTitle: workflow.title,
             templateDescription: workflow.description,
@@ -213,10 +250,7 @@ export default function Page() {
             </VStack>
             <VStack spacing={1}>
               <Text fontSize="2xl" fontWeight="bold" color="blue.500">
-                {
-                  likedWorkflows.filter((w: any) => w.complexity === 'SIMPLE')
-                    .length
-                }
+                {likedWorkflows.filter((w) => w.complexity === 'SIMPLE').length}
               </Text>
               <Text fontSize="sm" color="gray.600">
                 入门级别
@@ -225,7 +259,7 @@ export default function Page() {
             <VStack spacing={1}>
               <Text fontSize="2xl" fontWeight="bold" color="green.500">
                 {
-                  likedWorkflows.filter((w: any) => w.complexity === 'ADVANCED')
+                  likedWorkflows.filter((w) => w.complexity === 'ADVANCED')
                     .length
                 }
               </Text>
@@ -269,7 +303,7 @@ export default function Page() {
               }}
               gap={6}
             >
-              {likedWorkflows.map((workflow: any) => (
+              {likedWorkflows.map((workflow) => (
                 <Card
                   key={workflow.id}
                   bg="white"
@@ -372,8 +406,8 @@ export default function Page() {
                       <HStack spacing={3}>
                         <Avatar
                           size="xs"
-                          name={workflow.createdBy?.name}
-                          src={workflow.createdBy?.image}
+                          name={workflow.createdBy?.name ?? undefined}
+                          src={workflow.createdBy?.image ?? undefined}
                         />
                         <Text fontSize="sm" color="gray.500">
                           {workflow.createdBy?.name || '未知作者'}

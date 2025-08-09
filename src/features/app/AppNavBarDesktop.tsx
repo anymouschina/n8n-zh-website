@@ -40,16 +40,16 @@ export const AppNavBarDesktop = (props: BoxProps) => {
                 href={ROUTES_WORKFLOWS.app.root()}
                 icon={LuFolderOpen}
               >
-                {t('app:layout.mainMenu.workflows')}
+                工作流
               </AppNavBarDesktopMainMenuItem>
               <AppNavBarDesktopMainMenuItem href="/app/likes" icon={LuHeart}>
-                {t('app:layout.mainMenu.likes')}
+                收藏
               </AppNavBarDesktopMainMenuItem>
               <AppNavBarDesktopMainMenuItem
                 href="/app/community"
                 icon={LuUsers}
               >
-                {t('app:layout.mainMenu.community')}
+                社区
               </AppNavBarDesktopMainMenuItem>
             </HStack>
             <Avatar

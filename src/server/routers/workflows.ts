@@ -36,7 +36,7 @@ export const workflowsRouter = createTRPCRouter({
         });
 
         const categoryCountsRecord = categoryCounts.reduce(
-          (acc: any, item: any) => {
+          (acc, item) => {
             acc[item.category] = item._count;
             return acc;
           },
@@ -99,7 +99,7 @@ export const workflowsRouter = createTRPCRouter({
             isLiked: z.boolean().optional(),
             createdAt: z.date(),
             updatedAt: z.date(),
-            workflowData: z.any().nullable().optional(),
+            workflowData: z.unknown().nullable().optional(),
             createdBy: z.object({
               id: z.string(),
               name: z.string().nullable(),
@@ -145,10 +145,10 @@ export const workflowsRouter = createTRPCRouter({
         });
 
         return {
-          items: workflows.map((w) => ({
+          items: workflows.map((w: any) => ({
             ...w,
-            tags: w.tags.map((t) => t.name),
-            isLiked: ctx.user ? (w as any).likes?.length > 0 : false,
+            tags: w.tags.map((t: any) => t.name),
+            isLiked: ctx.user ? w?.likes?.length > 0 : false,
           })),
           nextCursor:
             workflows.length === input.limit
@@ -251,7 +251,8 @@ export const workflowsRouter = createTRPCRouter({
             likeCount: z.number(),
             createdAt: z.date(),
             updatedAt: z.date(),
-            workflowData: z.any().nullable().optional(),
+            workflowData: z.unknown().nullable().optional(),
+            previewImage: z.string().nullable().optional(),
             createdBy: z.object({
               id: z.string(),
               name: z.string().nullable(),
@@ -367,7 +368,7 @@ export const workflowsRouter = createTRPCRouter({
             viewCount: z.number(),
             downloadCount: z.number(),
             likeCount: z.number(),
-            workflowData: z.any().nullable().optional(),
+            workflowData: z.unknown().nullable().optional(),
             previewImage: z.string().nullable().optional(),
             createdAt: z.date(),
             updatedAt: z.date(),
@@ -426,7 +427,7 @@ export const workflowsRouter = createTRPCRouter({
         status: z.string(),
         nodeCount: z.number(),
         previewImage: z.string().nullable().optional(),
-        workflowData: z.any().nullable().optional(),
+        workflowData: z.unknown().nullable().optional(),
         viewCount: z.number(),
         downloadCount: z.number(),
         createdAt: z.date(),
@@ -460,7 +461,7 @@ export const workflowsRouter = createTRPCRouter({
         status: z.string(),
         previewImage: z.string().nullable().optional(),
         tags: z.array(z.string()).optional(),
-        workflowData: z.any().optional(),
+        workflowData: z.unknown().optional(),
       })
     )
     .output(z.object({ id: z.string() }))
@@ -476,7 +477,7 @@ export const workflowsRouter = createTRPCRouter({
       // 计算节点数量（如果有workflowData的话）
       let calculatedNodeCount = existing.nodeCount;
       if (input.workflowData && typeof input.workflowData === 'object') {
-        const nodes = input.workflowData.nodes;
+        const nodes = (input?.workflowData as any)?.nodes;
         if (nodes && typeof nodes === 'object') {
           calculatedNodeCount = Object.keys(nodes).length;
         }
@@ -487,13 +488,15 @@ export const workflowsRouter = createTRPCRouter({
         data: {
           title: input.title,
           description: input.description,
-          category: input.category as any,
-          complexity: input.complexity as any,
-          triggerType: input.triggerType as any,
-          status: input.status as any,
+          category: input.category,
+          complexity: input.complexity,
+          triggerType: input.triggerType,
+          status: input.status,
           previewImage: input.previewImage ?? null,
           nodeCount: calculatedNodeCount,
-          ...(input.workflowData && { workflowData: input.workflowData }),
+          ...((input.workflowData as any) && {
+            workflowData: input.workflowData,
+          }),
         },
         select: { id: true },
       });
@@ -725,7 +728,7 @@ export const workflowsRouter = createTRPCRouter({
         complexity: z.enum(['SIMPLE', 'INTERMEDIATE', 'ADVANCED', 'BUSINESS']),
         status: z.enum(['DRAFT', 'PUBLISHED']),
         tags: z.array(z.string()).default([]),
-        workflowData: z.any().optional(),
+        workflowData: z.unknown().optional(),
         category: z
           .enum([
             'CONTENT_AUTOMATION',
@@ -765,7 +768,7 @@ export const workflowsRouter = createTRPCRouter({
         // 计算节点数量（如果有workflowData的话）
         let calculatedNodeCount = input.nodeCount;
         if (input.workflowData && typeof input.workflowData === 'object') {
-          const nodes = input.workflowData.nodes;
+          const nodes = (input.workflowData as any).nodes;
           if (nodes && typeof nodes === 'object') {
             calculatedNodeCount = Object.keys(nodes).length;
           }
@@ -781,7 +784,7 @@ export const workflowsRouter = createTRPCRouter({
             category: input.category,
             triggerType: input.triggerType,
             nodeCount: calculatedNodeCount,
-            workflowData: input.workflowData || null,
+            workflowData: (input.workflowData as any) || null,
             previewImage: input.previewImage || null,
             createdById: ctx.user.id,
           },
@@ -903,7 +906,7 @@ export const workflowsRouter = createTRPCRouter({
             category: originalWorkflow.category,
             triggerType: originalWorkflow.triggerType,
             nodeCount: originalWorkflow.nodeCount,
-            workflowData: originalWorkflow.workflowData as any,
+            workflowData: originalWorkflow.workflowData || {},
             previewImage: originalWorkflow.previewImage,
             createdById: ctx.user.id,
           },

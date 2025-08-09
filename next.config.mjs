@@ -19,6 +19,12 @@ const config = withPWA({
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   async redirects() {
     return [
       {

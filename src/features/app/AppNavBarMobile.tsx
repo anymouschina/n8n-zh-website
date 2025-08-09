@@ -43,19 +43,19 @@ export const AppNavBarMobile = (props: BoxProps) => {
             icon={LuFolderOpen}
             href={ROUTES_WORKFLOWS.app.root()}
           >
-            {t('app:layout.mainMenu.workflows')}
+            工作流
           </AppNavBarMobileMainMenuItem>
           <AppNavBarMobileMainMenuItem href="/app/likes" icon={LuHeart}>
-            {t('app:layout.mainMenu.likes')}
+            收藏
           </AppNavBarMobileMainMenuItem>
           <AppNavBarMobileMainMenuItem href="/app/community" icon={LuUsers}>
-            {t('app:layout.mainMenu.community')}
+            社区
           </AppNavBarMobileMainMenuItem>
           <AppNavBarMobileMainMenuItem
             icon={LuUser}
             href={ROUTES_ACCOUNT.app.root()}
           >
-            {t('app:layout.mainMenu.account')}
+            我的
           </AppNavBarMobileMainMenuItem>
         </Container>
       </Flex>

@@ -108,10 +108,19 @@ export default function PageRegister() {
               control={form.control}
               type="select"
               name="language"
-              options={AVAILABLE_LANGUAGES.map(({ key }) => ({
-                label: t(`common:languages.${key}`),
-                value: key,
-              }))}
+              options={AVAILABLE_LANGUAGES.map(({ key }) => {
+                const languageMap = {
+                  en: 'English',
+                  fr: 'Français',
+                  ar: 'العربية',
+                  sw: 'Swahili',
+                  zh: '中文',
+                };
+                return {
+                  label: languageMap[key] || key,
+                  value: key,
+                };
+              })}
             />
           </FormField>
 

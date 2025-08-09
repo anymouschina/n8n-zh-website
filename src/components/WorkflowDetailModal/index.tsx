@@ -19,7 +19,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Spacer,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -27,19 +26,34 @@ import {
   LuCalendar,
   LuDownload,
   LuEye,
-  LuGitFork,
   LuPlay,
   LuSettings,
   LuTag,
   LuUser,
 } from 'react-icons/lu';
 
-import WorkflowViewer from '@/components/WorkflowViewer';
+import WorkflowViewer, { WorkflowData } from '@/components/WorkflowViewer';
 
 interface WorkflowDetailModalProps {
   isOpen: boolean;
   onClose: () => void;
-  workflow: any;
+  workflow: {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    complexity: string;
+    triggerType: string;
+    nodeCount: number;
+    viewCount: number;
+    downloadCount: number;
+    createdAt: string | Date;
+    createdBy?: {
+      name?: string | null;
+    } | null;
+    tags?: string[];
+    workflowData?: unknown;
+  } | null;
   onUseTemplate?: (workflowId: string) => void;
   onDownload?: (workflowId: string) => void;
 }
@@ -177,7 +191,7 @@ export function WorkflowDetailModal({
                 h={{ base: '220px', md: '280px' }}
               >
                 <WorkflowViewer
-                  workflowData={workflow.workflowData}
+                  workflowData={workflow.workflowData as WorkflowData | null}
                   height={280}
                   interactive={false}
                 />

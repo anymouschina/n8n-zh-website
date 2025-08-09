@@ -84,10 +84,19 @@ export const AccountProfileForm = () => {
                   control={form.control}
                   name="language"
                   type="select"
-                  options={AVAILABLE_LANGUAGES.map(({ key }) => ({
-                    label: t(`common:languages.${key}`),
-                    value: key,
-                  }))}
+                  options={AVAILABLE_LANGUAGES.map(({ key }) => {
+                    const languageMap = {
+                      en: 'English',
+                      fr: 'Français',
+                      ar: 'العربية',
+                      sw: 'Swahili',
+                      zh: '中文',
+                    };
+                    return {
+                      label: languageMap[key] || key,
+                      value: key,
+                    };
+                  })}
                 />
               </FormField>
 

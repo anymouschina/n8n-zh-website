@@ -24,14 +24,6 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Spacer,
   Text,
   Tooltip,
   VStack,
@@ -68,7 +60,9 @@ const complexityMap = {
 };
 
 export default function Page() {
-  const [selectedWorkflow, setSelectedWorkflow] = useState<any>(null);
+  const [selectedWorkflow, setSelectedWorkflow] = useState<
+    (typeof workflows)[0] | null
+  >(null);
   const [workflowToDelete, setWorkflowToDelete] = useState<string | null>(null);
   const toast = useToast();
 
@@ -164,7 +158,7 @@ export default function Page() {
   const workflows = workflowsData?.items || [];
 
   // 处理查看详情
-  const handleViewDetails = (workflow: any) => {
+  const handleViewDetails = (workflow: (typeof workflows)[0]) => {
     setSelectedWorkflow(workflow);
     onDetailModalOpen();
   };
@@ -187,7 +181,7 @@ export default function Page() {
   };
 
   // 处理发布工作流
-  const handlePublishWorkflow = (workflow: any) => {
+  const handlePublishWorkflow = (workflow: (typeof workflows)[0]) => {
     publishWorkflowMutation.mutate({
       id: workflow.id,
       title: workflow.title,
@@ -201,7 +195,7 @@ export default function Page() {
   };
 
   // 处理导出工作流
-  const handleExportWorkflow = async (workflow: any) => {
+  const handleExportWorkflow = async (workflow: (typeof workflows)[0]) => {
     try {
       const workflowData = {
         name: workflow.title,
@@ -479,7 +473,7 @@ export default function Page() {
 
                       <HStack spacing={2} flexWrap="wrap">
                         {workflow.tags &&
-                          workflow.tags.map((tag: any) => (
+                          workflow.tags.map((tag) => (
                             <Badge key={tag} variant="outline" size="sm">
                               {tag}
                             </Badge>

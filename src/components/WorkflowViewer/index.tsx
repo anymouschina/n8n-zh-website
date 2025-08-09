@@ -32,8 +32,15 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
+interface NodeData {
+  label?: string;
+  nodeType: string;
+  name?: string;
+  [key: string]: unknown;
+}
+
 // 自定义节点类型
-const CustomNode = ({ data }: { data: any }) => {
+const CustomNode = ({ data }: { data: NodeData }) => {
   const getNodeIcon = (nodeType: string) => {
     switch (nodeType?.toLowerCase()) {
       case 'trigger':
@@ -61,7 +68,7 @@ const CustomNode = ({ data }: { data: any }) => {
     }
   };
 
-  const getNodeColor = (nodeType: string) => {
+  const getNodeColor = (nodeType?: string) => {
     switch (nodeType?.toLowerCase()) {
       case 'trigger':
       case 'cron':
@@ -125,8 +132,26 @@ const nodeTypes: NodeTypes = {
   custom: CustomNode,
 };
 
+export interface WorkflowData {
+  nodes?: Record<
+    string,
+    {
+      name?: string;
+      type?: string;
+      position?: [number, number];
+      parameters?: Record<string, unknown>;
+    }
+  >;
+  connections?: Record<
+    string,
+    {
+      main?: Record<string, unknown> | Array<Record<string, unknown>>;
+    }
+  >;
+}
+
 interface WorkflowViewerProps {
-  workflowData: any;
+  workflowData: WorkflowData | null;
   width?: string | number;
   height?: string | number;
   interactive?: boolean;
@@ -148,29 +173,27 @@ export function WorkflowViewer({
     const edges: Edge[] = [];
 
     // 处理节点
-    Object.entries(workflowData.nodes).forEach(
-      ([nodeId, nodeData]: [string, any], index) => {
-        nodes.push({
-          id: nodeId,
-          type: 'custom',
-          position: {
-            x: nodeData.position?.[0] || (index % 3) * 200,
-            y: nodeData.position?.[1] || Math.floor(index / 3) * 100,
-          },
-          data: {
-            label: nodeData.name || nodeData.type || 'Node',
-            nodeType: nodeData.type,
-            name: nodeData.name,
-            ...nodeData.parameters,
-          },
-          draggable: interactive,
-        });
-      }
-    );
+    Object.entries(workflowData.nodes).forEach(([nodeId, nodeData], index) => {
+      nodes.push({
+        id: nodeId,
+        type: 'custom',
+        position: {
+          x: nodeData.position?.[0] || (index % 3) * 200,
+          y: nodeData.position?.[1] || Math.floor(index / 3) * 100,
+        },
+        data: {
+          label: nodeData.name || nodeData.type || 'Node',
+          nodeType: nodeData.type,
+          name: nodeData.name,
+          ...nodeData.parameters,
+        },
+        draggable: interactive,
+      });
+    });
 
     // 处理连接
     Object.entries(workflowData.connections || {}).forEach(
-      ([sourceNodeId, connections]: [string, any]) => {
+      ([sourceNodeId, connections]) => {
         const mainConnections = connections.main || {};
 
         // 处理 main 可能是数组或对象的情况
@@ -179,29 +202,30 @@ export function WorkflowViewer({
           : mainConnections;
 
         Object.entries(connectionsToProcess).forEach(
-          ([outputIndex, targetConnections]: [string, any]) => {
+          ([outputIndex, targetConnections]) => {
             // 确保 targetConnections 是数组
             const connectionsArray = Array.isArray(targetConnections)
               ? targetConnections
-              : [targetConnections].filter(Boolean);
+              : ([targetConnections].filter(Boolean) as Array<{
+                  node: string;
+                  index?: number;
+                }>);
 
-            connectionsArray.forEach(
-              (connection: any, connectionIndex: number) => {
-                const targetNodeId = connection.node;
-                const targetInputIndex = connection.index || 0;
+            connectionsArray.forEach((connection, connectionIndex: number) => {
+              const targetNodeId = connection.node;
+              const targetInputIndex = connection.index || 0;
 
-                edges.push({
-                  id: `${sourceNodeId}-${outputIndex}-${targetNodeId}-${targetInputIndex}-${connectionIndex}`,
-                  source: sourceNodeId,
-                  target: targetNodeId,
-                  sourceHandle: `output-${outputIndex}`,
-                  targetHandle: `input-${targetInputIndex}`,
-                  type: 'smoothstep',
-                  animated: false,
-                  style: { stroke: '#718096', strokeWidth: 2 },
-                });
-              }
-            );
+              edges.push({
+                id: `${sourceNodeId}-${outputIndex}-${targetNodeId}-${targetInputIndex}-${connectionIndex}`,
+                source: sourceNodeId,
+                target: targetNodeId,
+                sourceHandle: `output-${outputIndex}`,
+                targetHandle: `input-${targetInputIndex}`,
+                type: 'smoothstep',
+                animated: false,
+                style: { stroke: '#718096', strokeWidth: 2 },
+              });
+            });
           }
         );
       }

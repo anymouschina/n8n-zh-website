@@ -28,7 +28,7 @@ const zFilterStarterFormSchema = () =>
     starter: z.string().nullable(),
   });
 
-const options = ['Start UI [web]', 'Start UI [native]', 'Start UI [figma]'].map(
+const options = ['n8n中文 [web]', 'n8n中文 [native]', 'n8n中文 [figma]'].map(
   (v) => ({
     label: v,
     value: v.toLocaleLowerCase(),
@@ -120,16 +120,14 @@ export const WithTriggerCustomization = () => {
 
 // MARK: Filter clear and value
 export const WithFilterClearAndValue = () => {
-  const [value, setValue] = useState<string | null>('start ui [native]');
+  const [value, setValue] = useState<string | null>('n8n中文 [native]');
 
-  const options = [
-    'Start UI [web]',
-    'Start UI [native]',
-    'Start UI [figma]',
-  ].map((v) => ({
-    label: v,
-    value: v.toLocaleLowerCase(),
-  }));
+  const options = ['n8n中文 [web]', 'n8n中文 [native]', 'n8n中文 [figma]'].map(
+    (v) => ({
+      label: v,
+      value: v.toLocaleLowerCase(),
+    })
+  );
 
   const handleSubmit: SubmitHandler<FilterStarterFormSchema> = (values) => {
     setValue(values.starter);
@@ -199,16 +197,14 @@ const zFilterStartersFormSchema = () =>
 
 // MARK: MultiSelect and value
 export const WithMultiSelectAndValue = () => {
-  const [value, setValue] = useState<Array<string>>(['start ui [figma]']);
+  const [value, setValue] = useState<Array<string>>(['n8n中文 [figma]']);
 
-  const options = [
-    'Start UI [web]',
-    'Start UI [native]',
-    'Start UI [figma]',
-  ].map((v) => ({
-    label: v,
-    value: v.toLocaleLowerCase(),
-  }));
+  const options = ['n8n中文 [web]', 'n8n中文 [native]', 'n8n中文 [figma]'].map(
+    (v) => ({
+      label: v,
+      value: v.toLocaleLowerCase(),
+    })
+  );
 
   const handleSubmit: SubmitHandler<FilterStartersFormSchema> = (values) => {
     setValue(values.starters ?? []);

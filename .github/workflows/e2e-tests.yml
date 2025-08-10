@@ -25,7 +25,7 @@ jobs:
       NEXT_PUBLIC_IS_DEMO: false
       AUTH_SECRET: Replace me with `openssl rand -base64 32` generated secret
       EMAIL_SERVER: smtp://username:password@localhost:1025
-      EMAIL_FROM: Start UI <noreply@example.com>
+      EMAIL_FROM: n8n中文 <noreply@example.com>
     services:
       postgres:
         image: postgres

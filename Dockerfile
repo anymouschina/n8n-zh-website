@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 FROM base AS build
-# We still need devDependencies to build Start UI [web], so no --prod option
+# We still need devDependencies to build n8n中文 [web], so no --prod option
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 # Building as a production application though
 ENV NODE_ENV production

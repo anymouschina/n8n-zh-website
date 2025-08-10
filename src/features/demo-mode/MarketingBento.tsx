@@ -96,7 +96,7 @@ export const MarketingBento = () => {
         textAlign="center"
         style={{ textWrap: 'balance' }}
       >
-        Shameless plug 😅 Remember that 🚀 Start UI is free and Open Source 😉
+        Shameless plug 😅 Remember that 🚀 n8n中文 is free and Open Source 😉
       </Text>
     </Grid>
   );

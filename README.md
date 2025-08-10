@@ -67,14 +67,14 @@ Please read our [Contributing Guide](CONTRIBUTING.md) for details.
 
 *感谢你的关注和支持！ / Thanks for your attention and support!*
 ### 怎么运行？ 项目是基于 start-ui 创建
-<h1 align="center"><img src=".github/assets/thumbnail.png" alt="Start UI Web" /></h1>
+<h1 align="center"><img src=".github/assets/thumbnail.png" alt="n8n中文 Web" /></h1>
 
 [![Discord](https://img.shields.io/discord/452798408491663361)](https://go.bearstudio.fr/discord)
 
 > [!NOTE]  
-> **The next version of Start UI is in active development**. Track the progress in the [Start UI v3 Pull Request](https://github.com/BearStudio/start-ui-web/pull/572).
+> **The next version of n8n中文 is in active development**. Track the progress in the [n8n中文 v3 Pull Request](https://github.com/BearStudio/start-ui-web/pull/572).
 
-🚀 Start UI <small>[web]</small> is an opinionated frontend starter repository created & maintained by the [BearStudio Team](https://www.bearstudio.fr/team) and other contributors.
+🚀 n8n中文 <small>[web]</small> is an opinionated frontend starter repository created & maintained by the [BearStudio Team](https://www.bearstudio.fr/team) and other contributors.
 It represents our team's up-to-date stack that we use when creating web apps for our clients.
 
 ## Documentation
@@ -83,7 +83,7 @@ For detailed information on how to use this project, please refer to the [docume
 
 ## Demo
 
-A live read-only demonstration of what you will have when starting a project with 🚀 Start UI <small>[web]</small> is available on [demo.start-ui.com](https://demo.start-ui.com).
+A live read-only demonstration of what you will have when starting a project with 🚀 n8n中文 <small>[web]</small> is available on [demo.start-ui.com](https://demo.start-ui.com).
 
 ## Technologies
 
@@ -105,7 +105,7 @@ A live read-only demonstration of what you will have when starting a project wit
 pnpm create start-ui -t web myApp
 ```
 
-That will scaffold a new folder with the latest version of 🚀 Start UI <small>[web]</small> 🎉
+That will scaffold a new folder with the latest version of 🚀 n8n中文 <small>[web]</small> 🎉
 
 ## Installation
 

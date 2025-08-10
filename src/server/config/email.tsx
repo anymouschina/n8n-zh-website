@@ -7,23 +7,36 @@ import { MailOptions } from 'nodemailer/lib/sendmail-transport';
 import { env } from '@/env.mjs';
 import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 
-const transport = nodemailer.createTransport(env.EMAIL_SERVER);
+const transport = nodemailer.createTransport(
+  env.EMAIL_SERVER || {
+    host: env.MAIL_HOST,
+    port: env.MAIL_PORT,
+    secure: env.MAIL_SECURE,
+    auth: {
+      user: env.MAIL_USER,
+      pass: env.MAIL_PASS,
+    },
+  }
+);
 
 export const sendEmail = ({
   template,
   ...options
 }: Omit<MailOptions, 'html'> &
   Required<Pick<MailOptions, 'subject'>> & { template: ReactElement }) => {
-  if (env.NEXT_PUBLIC_IS_DEMO) {
-    return;
+  try {
+    if (env.NEXT_PUBLIC_IS_DEMO) {
+      return;
+    }
+    const html = render(template);
+    return transport.sendMail({
+      from: env.EMAIL_FROM,
+      html,
+      ...options,
+    });
+  } catch (error) {
+    console.error(error);
   }
-
-  const html = render(template);
-  return transport.sendMail({
-    from: env.EMAIL_FROM,
-    html,
-    ...options,
-  });
 };
 
 export const previewEmailRoute = async (

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Badge,
@@ -64,6 +64,26 @@ export function PageN8nShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedComplexity, setSelectedComplexity] = useState('全部级别');
   const [selectedWorkflow, setSelectedWorkflow] = useState(null);
+  const [githubStars, setGithubStars] = useState<number | null>(null);
+
+  // Fetch GitHub stars
+  useEffect(() => {
+    const fetchGithubStars = async () => {
+      try {
+        const response = await fetch(
+          'https://api.github.com/repos/anymouschina/n8n-zh-website'
+        );
+        const data = await response.json();
+        if (data.stargazers_count) {
+          setGithubStars(data.stargazers_count);
+        }
+      } catch (error) {
+        console.warn('无法获取GitHub星标数:', error);
+      }
+    };
+
+    fetchGithubStars();
+  }, []);
 
   // Modal controls
   const {
@@ -355,13 +375,19 @@ export function PageN8nShowcase() {
             ) : checkAuthenticated.data?.isAuthenticated ? (
               // 已登录用户显示
               <HStack spacing={4}>
-                <Link href={ROUTES_ACCOUNT.app.root()} passHref>
+                352545
+                <Link
+                  href="https://github.com/anymouschina/n8n-zh-website"
+                  passHref
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     size="sm"
                     variant="ghost"
                     leftIcon={<Icon icon={FaGithub} />}
                   >
-                    GitHub -
+                    GitHub {githubStars !== null ? `⭐ ${githubStars}` : '⭐'}
                   </Button>
                 </Link>
                 <Link href={ROUTES_ACCOUNT.app.root()} passHref>
@@ -383,7 +409,22 @@ export function PageN8nShowcase() {
                   </Button>
                 </Link>
               </HStack>
-            ) : null}
+            ) : (
+              <Link
+                href="https://github.com/anymouschina/n8n-zh-website"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  leftIcon={<Icon icon={FaGithub} />}
+                >
+                  GitHub {githubStars !== null ? `⭐ ${githubStars}` : '⭐'}
+                </Button>
+              </Link>
+            )}
           </Flex>
         </Container>
       </Box>

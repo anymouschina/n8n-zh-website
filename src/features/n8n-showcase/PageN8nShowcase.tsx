@@ -29,6 +29,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { FaGithub } from 'react-icons/fa6';
 import {
   LuDownload,
   LuEye,
@@ -354,6 +355,15 @@ export function PageN8nShowcase() {
             ) : checkAuthenticated.data?.isAuthenticated ? (
               // 已登录用户显示
               <HStack spacing={4}>
+                <Link href={ROUTES_ACCOUNT.app.root()} passHref>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    leftIcon={<Icon icon={FaGithub} />}
+                  >
+                    GitHub -
+                  </Button>
+                </Link>
                 <Link href={ROUTES_ACCOUNT.app.root()} passHref>
                   <Button
                     size="sm"

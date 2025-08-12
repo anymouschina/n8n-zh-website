@@ -18,7 +18,11 @@
       "Bash(curl -I http://localhost:3000/workflows/cme867yv30002jf6rq2tgk2zm)",
       "Bash(pnpm lint)",
       "Bash(git push)",
-      "Bash(git push --no-verify)"
+      "Bash(git push --no-verify)",
+      "Bash(pnpm build)",
+      "Bash(curl -s \"http://localhost:3000/api/rss\")",
+      "Bash(pkill -f \"next start\")",
+      "Bash(rm start.log)"
     ],
     "deny": []
   }

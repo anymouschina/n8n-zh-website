@@ -43,6 +43,7 @@ async function getPublishedWorkflows() {
   }
 }
 
+export const dynamic = 'force-dynamic';
 export async function GET() {
   try {
     // 获取真实的数据库数据

@@ -29,7 +29,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { FaGithub } from 'react-icons/fa6';
+import { FaGithub, FaRss } from 'react-icons/fa6';
 import {
   LuDownload,
   LuEye,
@@ -361,9 +361,27 @@ export function PageN8nShowcase() {
       <Box bg="white" borderBottom="1px" borderColor="gray.200" py={3}>
         <Container maxW="7xl">
           <Flex justify="space-between" align="center">
-            <Text fontSize="lg" fontWeight="semibold" color="gray.800">
-              {t('n8nShowcase:title')}
-            </Text>
+            <Flex align="center" gap={4}>
+              <Text fontSize="lg" fontWeight="semibold" color="gray.800">
+                {t('n8nShowcase:title')}
+              </Text>
+              <Link
+                href="/api/rss"
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton
+                  aria-label="RSS订阅"
+                  icon={<Icon icon={FaRss} />}
+                  size="sm"
+                  variant="ghost"
+                  color="orange.500"
+                  _hover={{ color: 'orange.600', bg: 'orange.50' }}
+                  title="订阅RSS feed"
+                />
+              </Link>
+            </Flex>
 
             {checkAuthenticated.isLoading ? (
               // 加载状态

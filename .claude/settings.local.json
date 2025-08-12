@@ -3,7 +3,19 @@
     "allow": [
       "Bash(npm run build:*)",
       "Bash(grep:*)",
-      "Bash(NODE_ENV=production pnpm build)"
+      "Bash(NODE_ENV=production pnpm build)",
+      "Bash(pnpm add rss)",
+      "Bash(curl -s http://localhost:3000/api/rss)",
+      "Bash(curl -I http://localhost:3000/api/rss)",
+      "Bash(pnpm db:ui)",
+      "Bash(pnpm db:seed)",
+      "Bash(curl -s http://localhost:3000/api/trpc/workflows.getAllPublic -X POST -H \"Content-Type: application/json\" -d '{\"\"\"\"json\"\"\"\":{\"\"\"\"limit\"\"\"\":5}}')",
+      "Bash(curl -s http://localhost:3000/api/trpc/workflows.getAllPublic -X POST -H \"Content-Type: application/json\" -d '{\"\"json\"\":{\"\"limit\"\":5}}')",
+      "Bash(curl -s http://localhost:3000/api/trpc/workflows.getAllPublic.query -X POST -H \"Content-Type: application/json\" -d '{\"\"json\"\":{\"\"limit\"\":5}}')",
+      "Bash(curl -I http://localhost:3000/workflows/cme87xddj000h31fb5i2szco3)",
+      "Bash(curl -s http://localhost:3000/workflows/cme87xddj000h31fb5i2szco3)",
+      "Bash(curl -I http://localhost:3000/workflows/cme87xdcz000531fb6ja8hgka)",
+      "Bash(curl -I http://localhost:3000/workflows/cme867yv30002jf6rq2tgk2zm)"
     ],
     "deny": []
   }

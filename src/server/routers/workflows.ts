@@ -445,7 +445,42 @@ export const workflowsRouter = createTRPCRouter({
         throw new TRPCError({ code: 'NOT_FOUND' });
       }
 
-      return { ...workflow, tags: workflow.tags.map((t) => t.name) };
+      return { ...workflow, tags: workflow.tags.map((t: any) => t.name) };
+    }),
+
+  // 获取单个工作流详情（公开访问）
+  getByIdPublic: publicProcedure()
+    .input(z.object({ id: z.string().cuid() }))
+    .query(async ({ ctx, input }) => {
+      try {
+        const workflow = await ctx.db.workflow.findFirst({
+          where: { id: input.id, status: 'PUBLISHED' },
+          include: {
+            createdBy: { select: { id: true, name: true, image: true } },
+            tags: { select: { name: true } },
+          },
+        });
+
+        if (!workflow) {
+          throw new TRPCError({
+            code: 'NOT_FOUND',
+            message: '工作流不存在或未发布',
+          });
+        }
+
+        return {
+          ...workflow,
+          tags: workflow.tags.map((t: any) => t.name),
+        };
+      } catch (error) {
+        if (error instanceof TRPCError) {
+          throw error;
+        }
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: '获取工作流详情失败',
+        });
+      }
     }),
 
   // 更新工作流（仅限当前用户）

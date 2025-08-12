@@ -263,7 +263,7 @@ export default function Page() {
     handleSave(true);
   };
 
-  if (!id) return null;
+  // if (!id) return null;
 
   if (isLoading) {
     return (

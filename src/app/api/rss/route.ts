@@ -56,7 +56,7 @@ export async function GET() {
       title: 'n8n中文社区 - 最新工作流',
       description: 'n8n中文社区最新发布的n8n工作流模板',
       feed_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/rss`,
-      site_url: process.env.NEXT_PUBLIC_BASE_URL,
+      site_url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
       language: 'zh-CN',
       pubDate: new Date(),
       ttl: 60,

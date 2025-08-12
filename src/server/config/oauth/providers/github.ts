@@ -22,10 +22,14 @@ const zGitHubEmails = () =>
   );
 
 const githubClient =
-  env.GITHUB_CLIENT_ID && env.GITHUB_CLIENT_SECRET
-    ? new GitHub(env.GITHUB_CLIENT_ID, env.GITHUB_CLIENT_SECRET, {
-        redirectURI: getOAuthCallbackUrl('github'),
-      })
+  process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET
+    ? new GitHub(
+        process.env.GITHUB_CLIENT_ID,
+        process.env.GITHUB_CLIENT_SECRET,
+        {
+          redirectURI: getOAuthCallbackUrl('github'),
+        }
+      )
     : null;
 
 export const github: OAuthClient = {

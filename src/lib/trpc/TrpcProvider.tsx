@@ -15,7 +15,7 @@ import { trpc } from './client';
 
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url SSR should use vercel url
-  return env.NEXT_PUBLIC_BASE_URL;
+  return process.env.NEXT_PUBLIC_BASE_URL;
 };
 
 const networkMode =

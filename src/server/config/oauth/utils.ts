@@ -22,4 +22,4 @@ export type OAuthClient = {
 };
 
 export const getOAuthCallbackUrl = (provider: OAuthProvider) =>
-  `${env.NEXT_PUBLIC_BASE_URL}/oauth/${provider}`;
+  `${process.env.NEXT_PUBLIC_BASE_URL}/oauth/${provider}`;

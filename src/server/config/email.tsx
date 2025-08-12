@@ -7,17 +7,15 @@ import { MailOptions } from 'nodemailer/lib/sendmail-transport';
 import { env } from '@/env.mjs';
 import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 
-const transport = nodemailer.createTransport(
-  env.EMAIL_SERVER || {
-    host: env.MAIL_HOST,
-    port: env.MAIL_PORT,
-    secure: env.MAIL_SECURE,
-    auth: {
-      user: env.MAIL_USER,
-      pass: env.MAIL_PASS,
-    },
-  }
-);
+const transport = nodemailer.createTransport({
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
+  secure: process.env.MAIL_SECURE,
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+  },
+});
 
 export const sendEmail = ({
   template,

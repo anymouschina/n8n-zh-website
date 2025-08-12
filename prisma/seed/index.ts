@@ -170,7 +170,7 @@ async function createSampleWorkflows() {
 async function main() {
   await createRepositories();
   await createUsers();
-  await createSampleWorkflows();
+  // await createSampleWorkflows();
 }
 
 main()

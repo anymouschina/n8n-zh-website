@@ -7,5 +7,5 @@ export const openApiDocument = generateOpenApiDocument(appRouter, {
   title: 'API Documentation',
   description: 'OpenAPI compliant REST API built using tRPC with Next.js',
   version: '1.0.0',
-  baseUrl: `${env.NEXT_PUBLIC_BASE_URL}/api/rest`,
+  baseUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/api/rest`,
 });

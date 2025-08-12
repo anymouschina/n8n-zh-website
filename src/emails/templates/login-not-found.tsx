@@ -33,7 +33,7 @@ export const EmailLoginNotFound = ({ language }: EmailLoginNotFoundProps) => {
           </Text>
           <Button
             style={styles.button}
-            href={`${env.NEXT_PUBLIC_BASE_URL}`}
+            href={`${process.env.NEXT_PUBLIC_BASE_URL}`}
             target="_blank"
           >
             {i18n.t('emails:loginNotFound.button')}

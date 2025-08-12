@@ -21,7 +21,7 @@ export const env = createEnv({
     DISCORD_CLIENT_ID: zOptionalWithReplaceMe(),
     DISCORD_CLIENT_SECRET: zOptionalWithReplaceMe(),
 
-    EMAIL_SERVER: z.string().url(),
+    // EMAIL_SERVER: z.string().url(),
     EMAIL_FROM: z.string(),
     LOGGER_LEVEL: z
       .enum(['trace', 'debug', 'info', 'warn', 'error', 'fatal'])

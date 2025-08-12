@@ -10,7 +10,7 @@ async function getPublishedWorkflows() {
     const workflows = await prisma.workflow.findMany({
       where: { status: 'PUBLISHED' },
       include: {
-        createdBy: { select: { id: true, name: true, image: true } },
+        createdBy: { select: { id: true, name: true } },
         tags: { select: { name: true } },
       },
       orderBy: { createdAt: 'desc' },

@@ -15,7 +15,10 @@
       "Bash(curl -I http://localhost:3000/workflows/cme87xddj000h31fb5i2szco3)",
       "Bash(curl -s http://localhost:3000/workflows/cme87xddj000h31fb5i2szco3)",
       "Bash(curl -I http://localhost:3000/workflows/cme87xdcz000531fb6ja8hgka)",
-      "Bash(curl -I http://localhost:3000/workflows/cme867yv30002jf6rq2tgk2zm)"
+      "Bash(curl -I http://localhost:3000/workflows/cme867yv30002jf6rq2tgk2zm)",
+      "Bash(pnpm lint)",
+      "Bash(git push)",
+      "Bash(git push --no-verify)"
     ],
     "deny": []
   }

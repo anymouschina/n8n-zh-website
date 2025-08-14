@@ -302,7 +302,15 @@ export const workflowsRouter = createTRPCRouter({
           include: {
             workflow: {
               include: {
-                createdBy: { select: { id: true, name: true, image: true } },
+                createdBy: {
+                  select: {
+                    id: true,
+                    name: true,
+                    image: true,
+                    email: true,
+                    contact: true,
+                  },
+                },
                 tags: { select: { name: true } },
               },
             },

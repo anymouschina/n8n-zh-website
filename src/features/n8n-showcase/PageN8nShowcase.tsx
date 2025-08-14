@@ -31,6 +31,7 @@ import { useTranslation } from 'react-i18next';
 import { FaGithub, FaRss } from 'react-icons/fa6';
 import {
   LuDownload,
+  LuExternalLink,
   LuEye,
   LuGitFork,
   LuHeart,
@@ -339,6 +340,33 @@ export function PageN8nShowcase() {
     toast({
       title: '功能开发中',
       description: '下载功能正在开发中，敬请期待',
+      status: 'info',
+      duration: 3000,
+      isClosable: true,
+    });
+  };
+
+  const handleOnlinePreview = (_workflowId: string) => {
+    if (!checkAuthenticated.data?.isAuthenticated) {
+      // 显示提示消息
+      toast({
+        title: '该功能仅登录可用',
+        status: 'warning',
+        duration: 3000,
+        isClosable: true,
+      });
+
+      // 3秒后跳转到登录页面
+      setTimeout(() => {
+        window.location.href = '/login';
+      }, 3000);
+      return;
+    }
+
+    // TODO: 实现在线运行功能
+    toast({
+      title: '功能开发中',
+      description: '在线运行功能正在开发中，敬请期待',
       status: 'info',
       duration: 3000,
       isClosable: true,
@@ -722,6 +750,15 @@ export function PageN8nShowcase() {
                     </HStack>
 
                     <HStack spacing={2} pt={2}>
+                      <Button
+                        leftIcon={<Icon icon={LuExternalLink} />}
+                        colorScheme="purple"
+                        size="sm"
+                        flex={1}
+                        onClick={() => handleOnlinePreview(workflow.id)}
+                      >
+                        在线运行
+                      </Button>
                       <Button
                         leftIcon={<Icon icon={LuPlay} />}
                         colorScheme="blue"

@@ -27,7 +27,13 @@
       "Bash(pnpm prisma migrate dev --create-only --name add-new-field)",
       "Bash(npx prisma migrate dev --create-only --name add-new-field)",
       "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/user.prisma --script --script-paths ./prisma/migrations)",
-      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/user.prisma --script)"
+      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/user.prisma --script)",
+      "Bash(npx prisma migrate diff --from-empty --to-datamodel prisma/schema/user.prisma --script)",
+      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --output ./prisma/migration.sql)",
+      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/main.prisma --output ./prisma/new-migration.sql)",
+      "Bash(npx prisma db push --preview-feature)",
+      "Bash(npx prisma db push)",
+      "Bash(npx prisma db push --accept-data-loss)"
     ],
     "deny": []
   }

@@ -34,6 +34,12 @@ export const zUser = () =>
       invalid_type_error: t('users:data.email.invalid'),
     }),
     isEmailVerified: z.boolean(),
+    contact: zu.string
+      .nonEmpty(z.string(), {
+        required_error: t('users:data.contact.required'),
+        invalid_type_error: t('users:data.contact.invalid'),
+      })
+      .nullish(),
     authorizations: zu.array
       .nonEmpty(
         z.array(zUserAuthorization(), {

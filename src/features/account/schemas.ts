@@ -11,6 +11,7 @@ export const zUserAccount = () =>
     isEmailVerified: true,
     authorizations: true,
     language: true,
+    contact: true,
   });
 
 export type UserAccountWithEmail = z.infer<
@@ -23,6 +24,7 @@ export const zUserAccountWithEmail = () =>
     email: true,
     authorizations: true,
     language: true,
+    contact: true,
   });
 
 export type FormFieldsAccountEmail = z.infer<
@@ -35,4 +37,4 @@ export type FormFieldsAccountProfile = z.infer<
   ReturnType<typeof zFormFieldsAccountProfile>
 >;
 export const zFormFieldsAccountProfile = () =>
-  zUserAccount().pick({ name: true, language: true }).required();
+  zUserAccount().pick({ name: true, language: true, contact: true }).required();

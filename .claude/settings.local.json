@@ -22,7 +22,12 @@
       "Bash(pnpm build)",
       "Bash(curl -s \"http://localhost:3000/api/rss\")",
       "Bash(pkill -f \"next start\")",
-      "Bash(rm start.log)"
+      "Bash(rm start.log)",
+      "Bash(pnpm db:push)",
+      "Bash(pnpm prisma migrate dev --create-only --name add-new-field)",
+      "Bash(npx prisma migrate dev --create-only --name add-new-field)",
+      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/user.prisma --script --script-paths ./prisma/migrations)",
+      "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/user.prisma --script)"
     ],
     "deny": []
   }

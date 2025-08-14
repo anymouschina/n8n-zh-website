@@ -21,6 +21,7 @@ model User {
   isEmailVerified Boolean        @default(false)
   accountStatus   AccountStatus  @default(NOT_VERIFIED)
   image           String?
+  contact         String?        // 联系方式
   authorizations  UserRole[]     @default([APP])
   language        String         @default("en")
   lastLoginAt     DateTime?

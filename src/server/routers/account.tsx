@@ -52,6 +52,7 @@ export const accountRouter = createTRPCRouter({
       zUserAccount().required().pick({
         name: true,
         language: true,
+        contact: true,
       })
     )
     .output(zUserAccount())

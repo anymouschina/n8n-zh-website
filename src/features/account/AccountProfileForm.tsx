@@ -53,6 +53,7 @@ export const AccountProfileForm = () => {
     values: {
       name: account.data?.name ?? '',
       language: account.data?.language ?? DEFAULT_LANGUAGE_KEY,
+      contact: account.data?.contact ?? '',
     },
   });
 
@@ -74,6 +75,17 @@ export const AccountProfileForm = () => {
                   control={form.control}
                   name="name"
                   type="text"
+                />
+              </FormField>
+              <FormField>
+                <FormFieldLabel>
+                  {t('account:data.contact.label')}
+                </FormFieldLabel>
+                <FormFieldController
+                  control={form.control}
+                  name="contact"
+                  type="text"
+                  placeholder="邮箱、微信、QQ等方式"
                 />
               </FormField>
               <FormField>

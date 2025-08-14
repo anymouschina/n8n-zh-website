@@ -31,6 +31,7 @@ import ReactFlow, {
   useNodesState,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
+import Image from 'next/image';
 
 interface NodeData {
   label?: string;
@@ -257,7 +258,7 @@ export function WorkflowViewer({
       >
         <VStack spacing={2}>
           <Text color="gray.500" fontSize="sm">
-            <img src="/tip.jpeg" alt="" srcset="" />
+            <Image src="/tip.jpeg" alt='' width={400} height={200}  />
           </Text>
         </VStack>
       </Box>
@@ -273,7 +274,7 @@ export function WorkflowViewer({
       border="1px solid"
       borderColor="gray.200"
     >
-      <img src="/tip.jpeg" alt="" srcset="" />
+       <Image src="/tip.jpeg" alt='' width={400} height={200}  />
       {/* <ReactFlow
         nodes={nodes}
         edges={edges}

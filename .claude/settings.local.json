@@ -33,8 +33,12 @@
       "Bash(npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema/main.prisma --output ./prisma/new-migration.sql)",
       "Bash(npx prisma db push --preview-feature)",
       "Bash(npx prisma db push)",
-      "Bash(npx prisma db push --accept-data-loss)"
+      "Bash(npx prisma db push --accept-data-loss)",
+      "Bash(pnpm build:info)",
+      "Bash(tsc --noEmit)",
+      "Bash(rm /Users/libiqiang/workspace/n8n-zh-website/src/server/routers/n8n-external.ts)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

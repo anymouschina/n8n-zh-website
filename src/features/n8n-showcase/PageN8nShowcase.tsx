@@ -48,7 +48,7 @@ import { ROUTES_ACCOUNT } from '@/features/account/routes';
 import { ROUTES_AUTH } from '@/features/auth/routes';
 import { ROUTES_WORKFLOWS } from '@/features/workflows/routes';
 import { trpc } from '@/lib/trpc/client';
-
+import { transformWorkflowData } from '@/lib/n8n-external-api';
 // 复杂度映射
 const complexityMap = {
   SIMPLE: '入门',
@@ -56,7 +56,6 @@ const complexityMap = {
   ADVANCED: '高级',
   BUSINESS: '商业',
 };
-
 const complexities = ['全部级别', ...Object.values(complexityMap)];
 
 export function PageN8nShowcase() {
@@ -192,6 +191,46 @@ export function PageN8nShowcase() {
       }
     },
   });
+  const createWorkflowMutation = trpc.workflows.createExternalWorkflow.useMutation({
+    onSuccess: (res) => {
+      if(res.url){
+        toast({
+          title: '创建成功',
+          status: 'success',
+          duration: 2000,
+          isClosable: true,
+        });
+        window.open(res.url,'_blank')
+      }else{
+        toast({
+          title: '创建失败，请微信联系 lbq11147',
+          status: 'error',
+          duration: 2000,
+          isClosable: true,
+        });
+      }
+
+    },
+    onError: (error) => {
+      if (error.data?.code === 'UNAUTHORIZED') {
+        toast({
+          title: '需要登录才能取消运行',
+          description: '请先登录后再操作',
+          status: 'warning',
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: '操作失败',
+          description: error.message,
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    },
+  })
 
   // 下载量和预览量相关mutations
   const incrementDownloadMutation =
@@ -346,7 +385,7 @@ export function PageN8nShowcase() {
     });
   };
 
-  const handleOnlinePreview = (_workflowId: string) => {
+  const handleOnlinePreview = async (workflowId: string) => {
     if (!checkAuthenticated.data?.isAuthenticated) {
       // 显示提示消息
       toast({
@@ -363,14 +402,31 @@ export function PageN8nShowcase() {
       return;
     }
 
-    // TODO: 实现在线运行功能
-    toast({
-      title: '功能开发中',
-      description: '在线运行功能正在开发中，敬请期待',
-      status: 'info',
-      duration: 3000,
-      isClosable: true,
-    });
+    try {
+      // 显示加载状态
+      toast({
+        title: '正在创建工作流...',
+        status: 'info',
+        duration: 10000,
+        isClosable: true,
+      });
+      // 查找工作流数据
+      const workflow = filteredWorkflows.find(w => w.id === workflowId);
+      if (!workflow) {
+        throw new Error('工作流不存在');
+      }
+      // 创建外部工作流
+      const createWorkflowRequest = {
+        workflowData: workflow.workflowData,
+        title:workflow.title
+      };
+      console.log(2222,trpc.workflows.createExternalWorkflow,createWorkflowRequest)
+      createWorkflowMutation.mutate(createWorkflowRequest)
+
+    } catch (error) {
+      // 错误处理现在在mutation的onError回调中处理
+      console.error('在线运行失败:', error);
+    }
   };
 
   // 处理点赞

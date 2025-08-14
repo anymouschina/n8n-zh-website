@@ -6,8 +6,60 @@ import {
   protectedProcedure,
   publicProcedure,
 } from '@/server/config/trpc';
+import { createUserInExternalAPI, createWorkflowInExternalAPI } from '@/lib/n8n-external-api';
 
 export const workflowsRouter = createTRPCRouter({
+  createExternalWorkflow: protectedProcedure()
+    .input(
+      z.object({
+        workflowData: z.unknown().nullable().optional(),
+        title: z.string()
+      })
+    )
+    .output(
+      z.object({
+        message: z.string(),
+        url: z.string().optional(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      try {
+        const { workflowData , title} = input;
+        const {email,name = ''} = ctx.user
+        if(!email){
+          return {
+            status: 401,
+            message:'请先登录'
+
+          }
+        }
+        const { userInfo } = await createUserInExternalAPI(
+          email,
+          name || '',
+          name || '',
+        ) as any
+        const data = await createWorkflowInExternalAPI({
+          userId: userInfo.id,
+          workflowName: title,
+          workflowJson: workflowData as any
+        })
+        const jumpUrl = `${process.env.N8N_RUNNING_URL}/workflow/${data.data?.id}`
+        console.log(userInfo,'user')
+        return {
+          url:`${process.env.N8N_RUNNING_URL}/redirect.html?url=${encodeURIComponent(jumpUrl)}&userInfo=${encodeURIComponent(JSON.stringify(userInfo))}`,
+          message: '工作流创建成功',
+        };
+      } catch (error) {
+        console.error('创建工作流失败:', error);
+        if (error instanceof TRPCError) {
+          throw error;
+        }
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: '创建工作流失败，请稍后重试',
+        });
+      }
+    }),
   // 获取工作流统计信息（使用模拟数据）
   getStats: publicProcedure()
     .output(
@@ -20,7 +72,6 @@ export const workflowsRouter = createTRPCRouter({
     )
     .query(async ({ ctx }) => {
       try {
-        // 从数据库获取真实统计数据
         const [totalWorkflows, totalUsers, categoryCounts] = await Promise.all([
           ctx.db.workflow.count(),
           ctx.db.user.count({ where: { accountStatus: 'ENABLED' } }),

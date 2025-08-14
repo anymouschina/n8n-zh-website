@@ -104,6 +104,8 @@ export const workflowsRouter = createTRPCRouter({
               id: z.string(),
               name: z.string().nullable(),
               image: z.string().nullable(),
+              email: z.string().nullable(),
+              contact: z.string().nullable(),
             }),
             tags: z.array(z.string()),
           })
@@ -131,7 +133,13 @@ export const workflowsRouter = createTRPCRouter({
           where,
           include: {
             createdBy: {
-              select: { id: true, name: true, image: true, email: true },
+              select: {
+                id: true,
+                name: true,
+                image: true,
+                email: true,
+                contact: true,
+              },
             },
             tags: { select: { name: true } },
             ...(ctx.user && {
@@ -183,6 +191,7 @@ export const workflowsRouter = createTRPCRouter({
                 name: '张三',
                 image: null,
                 email: 'zhangsan@example.com',
+                contact: '微信: zhangsan123',
               },
               tags: ['营销', '邮件', '自动化'],
             },
@@ -207,6 +216,7 @@ export const workflowsRouter = createTRPCRouter({
                 name: '李四',
                 image: null,
                 email: 'lisi@example.com',
+                contact: 'QQ: 123456789',
               },
               tags: ['CRM', '数据同步'],
             },
@@ -231,6 +241,7 @@ export const workflowsRouter = createTRPCRouter({
                 name: '王五',
                 image: null,
                 email: 'wangwu@example.com',
+                contact: '邮箱: wangwu@example.com',
               },
               tags: ['社交媒体', '监控'],
             },
@@ -274,6 +285,8 @@ export const workflowsRouter = createTRPCRouter({
               id: z.string(),
               name: z.string().nullable(),
               image: z.string().nullable(),
+              email: z.string().nullable(),
+              contact: z.string().nullable(),
             }),
             tags: z.array(z.string()),
           })
@@ -334,6 +347,7 @@ export const workflowsRouter = createTRPCRouter({
                 name: '张三',
                 image: null,
                 email: 'zhangsan@example.com',
+                contact: '微信: zhangsan123',
               },
               tags: ['营销', '邮件', '自动化'],
             },
@@ -357,6 +371,7 @@ export const workflowsRouter = createTRPCRouter({
                 name: '王五',
                 image: null,
                 email: 'wangwu@example.com',
+                contact: '邮箱: wangwu@example.com',
               },
               tags: ['社交媒体', '监控'],
             },
@@ -484,7 +499,13 @@ export const workflowsRouter = createTRPCRouter({
           where: { id: input.id, status: 'PUBLISHED' },
           include: {
             createdBy: {
-              select: { id: true, name: true, image: true, email: true },
+              select: {
+                id: true,
+                name: true,
+                image: true,
+                email: true,
+                contact: true,
+              },
             },
             tags: { select: { name: true } },
           },

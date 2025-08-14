@@ -667,18 +667,32 @@ export function PageN8nShowcase() {
                         <Text color="gray.600" fontSize="sm" noOfLines={3}>
                           {workflow.description}
                         </Text>
-                        {workflow.createdBy?.name && (
-                          <HStack align="center" spacing={1}>
-                            <Icon
-                              icon={LuUser}
-                              color="gray.400"
-                              fontSize="xs"
-                            />
-                            <Text color="gray.500" fontSize="sm">
-                              作者：{workflow.createdBy.name}
-                            </Text>
-                          </HStack>
-                        )}
+                        <VStack spacing={1} align="stretch">
+                          {workflow.createdBy?.name && (
+                            <HStack align="center" spacing={1}>
+                              <Icon
+                                icon={LuUser}
+                                color="gray.400"
+                                fontSize="xs"
+                              />
+                              <Text color="gray.500" fontSize="sm">
+                                作者：{workflow.createdBy.name}
+                              </Text>
+                            </HStack>
+                          )}
+                          {workflow.createdBy?.contact && (
+                            <HStack align="center" spacing={1}>
+                              <Icon
+                                icon={LuUser}
+                                color="gray.400"
+                                fontSize="xs"
+                              />
+                              <Text color="gray.500" fontSize="sm">
+                                联系方式：{workflow.createdBy.contact}
+                              </Text>
+                            </HStack>
+                          )}
+                        </VStack>
                       </VStack>
                     </VStack>
 

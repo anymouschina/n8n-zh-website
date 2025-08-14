@@ -256,9 +256,8 @@ export function WorkflowViewer({
         borderColor="gray.300"
       >
         <VStack spacing={2}>
-          <ChakraIcon as={LuSettings} boxSize={8} color="gray.400" />
           <Text color="gray.500" fontSize="sm">
-            暂无工作流数据
+            <img src="/tip.jpeg" alt="" srcset="" />
           </Text>
         </VStack>
       </Box>
@@ -274,7 +273,8 @@ export function WorkflowViewer({
       border="1px solid"
       borderColor="gray.200"
     >
-      <ReactFlow
+      <img src="/tip.jpeg" alt="" srcset="" />
+      {/* <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={interactive ? onNodesChange : undefined}
@@ -300,7 +300,7 @@ export function WorkflowViewer({
           size={1}
           color="#e2e8f0"
         />
-      </ReactFlow>
+      </ReactFlow> */}
     </Box>
   );
 }

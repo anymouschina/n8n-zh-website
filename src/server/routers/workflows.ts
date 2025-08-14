@@ -130,7 +130,9 @@ export const workflowsRouter = createTRPCRouter({
         const workflows = await ctx.db.workflow.findMany({
           where,
           include: {
-            createdBy: { select: { id: true, name: true, image: true } },
+            createdBy: {
+              select: { id: true, name: true, image: true, email: true },
+            },
             tags: { select: { name: true } },
             ...(ctx.user && {
               likes: {
@@ -176,7 +178,12 @@ export const workflowsRouter = createTRPCRouter({
               createdAt: new Date('2024-01-15'),
               updatedAt: new Date('2024-01-15'),
               workflowData: null,
-              createdBy: { id: 'user1', name: '张三', image: null },
+              createdBy: {
+                id: 'user1',
+                name: '张三',
+                image: null,
+                email: 'zhangsan@example.com',
+              },
               tags: ['营销', '邮件', '自动化'],
             },
             {
@@ -195,7 +202,12 @@ export const workflowsRouter = createTRPCRouter({
               createdAt: new Date('2024-01-10'),
               updatedAt: new Date('2024-01-10'),
               workflowData: null,
-              createdBy: { id: 'user2', name: '李四', image: null },
+              createdBy: {
+                id: 'user2',
+                name: '李四',
+                image: null,
+                email: 'lisi@example.com',
+              },
               tags: ['CRM', '数据同步'],
             },
             {
@@ -214,7 +226,12 @@ export const workflowsRouter = createTRPCRouter({
               createdAt: new Date('2024-01-08'),
               updatedAt: new Date('2024-01-08'),
               workflowData: null,
-              createdBy: { id: 'user3', name: '王五', image: null },
+              createdBy: {
+                id: 'user3',
+                name: '王五',
+                image: null,
+                email: 'wangwu@example.com',
+              },
               tags: ['社交媒体', '监控'],
             },
           ],
@@ -312,7 +329,12 @@ export const workflowsRouter = createTRPCRouter({
               createdAt: new Date('2024-01-15'),
               updatedAt: new Date('2024-01-15'),
               workflowData: null,
-              createdBy: { id: 'user1', name: '张三', image: null },
+              createdBy: {
+                id: 'user1',
+                name: '张三',
+                image: null,
+                email: 'zhangsan@example.com',
+              },
               tags: ['营销', '邮件', '自动化'],
             },
             {
@@ -330,7 +352,12 @@ export const workflowsRouter = createTRPCRouter({
               createdAt: new Date('2024-01-08'),
               updatedAt: new Date('2024-01-08'),
               workflowData: null,
-              createdBy: { id: 'user3', name: '王五', image: null },
+              createdBy: {
+                id: 'user3',
+                name: '王五',
+                image: null,
+                email: 'wangwu@example.com',
+              },
               tags: ['社交媒体', '监控'],
             },
           ],
@@ -456,7 +483,9 @@ export const workflowsRouter = createTRPCRouter({
         const workflow = await ctx.db.workflow.findFirst({
           where: { id: input.id, status: 'PUBLISHED' },
           include: {
-            createdBy: { select: { id: true, name: true, image: true } },
+            createdBy: {
+              select: { id: true, name: true, image: true, email: true },
+            },
             tags: { select: { name: true } },
           },
         });

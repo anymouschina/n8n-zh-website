@@ -50,6 +50,7 @@ interface WorkflowDetailModalProps {
     createdAt: string | Date;
     createdBy?: {
       name?: string | null;
+      email?: string | null;
     } | null;
     tags?: string[];
     workflowData?: unknown;
@@ -164,9 +165,19 @@ export function WorkflowDetailModal({
                 </Badge>
               </HStack>
             </Flex>
-            <Text color="gray.600" fontSize="sm" noOfLines={2}>
-              {workflow.description}
-            </Text>
+            <VStack spacing={2} align="stretch">
+              <Text color="gray.600" fontSize="sm" noOfLines={2}>
+                {workflow.description}
+              </Text>
+              {workflow.createdBy?.name && (
+                <HStack align="center" spacing={1}>
+                  <Icon as={LuUser} color="gray.400" fontSize="xs" />
+                  <Text color="gray.500" fontSize="sm">
+                    作者：{workflow.createdBy.name}
+                  </Text>
+                </HStack>
+              )}
+            </VStack>
           </VStack>
         </ModalHeader>
         <ModalCloseButton />
@@ -267,6 +278,38 @@ export function WorkflowDetailModal({
                           </Badge>
                         ))}
                       </Flex>
+                    </Box>
+                  )}
+
+                  {/* 联系信息 */}
+                  {workflow.createdBy?.name && (
+                    <Box>
+                      <HStack mb={2}>
+                        <Icon as={LuUser} color="gray.500" />
+                        <Text fontWeight="semibold" color="gray.700">
+                          联系方式
+                        </Text>
+                      </HStack>
+                      <VStack spacing={2} align="stretch">
+                        <HStack>
+                          <Text fontSize="sm" color="gray.600">
+                            作者:
+                          </Text>
+                          <Text fontSize="sm" fontWeight="medium">
+                            {workflow.createdBy.name}
+                          </Text>
+                        </HStack>
+                        {workflow.createdBy.email && (
+                          <HStack>
+                            <Text fontSize="sm" color="gray.600">
+                              邮箱:
+                            </Text>
+                            <Text fontSize="sm" fontWeight="medium">
+                              {workflow.createdBy.email}
+                            </Text>
+                          </HStack>
+                        )}
+                      </VStack>
                     </Box>
                   )}
                 </VStack>

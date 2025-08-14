@@ -20,7 +20,6 @@ import {
   InputLeftElement,
   Select,
   Spacer,
-  Stack,
   Text,
   Tooltip,
   VStack,
@@ -324,7 +323,7 @@ export function PageN8nShowcase() {
     }
   };
 
-  const handleDownload = (workflowId: string) => {
+  const handleDownload = (_workflowId: string) => {
     if (!checkAuthenticated.data?.isAuthenticated) {
       toast({
         title: '需要登录',
@@ -664,9 +663,23 @@ export function PageN8nShowcase() {
                       <Heading size="md" noOfLines={2}>
                         {workflow.title}
                       </Heading>
-                      <Text color="gray.600" fontSize="sm" noOfLines={3}>
-                        {workflow.description}
-                      </Text>
+                      <VStack spacing={2} align="stretch">
+                        <Text color="gray.600" fontSize="sm" noOfLines={3}>
+                          {workflow.description}
+                        </Text>
+                        {workflow.createdBy?.name && (
+                          <HStack align="center" spacing={1}>
+                            <Icon
+                              icon={LuUser}
+                              color="gray.400"
+                              fontSize="xs"
+                            />
+                            <Text color="gray.500" fontSize="sm">
+                              作者：{workflow.createdBy.name}
+                            </Text>
+                          </HStack>
+                        )}
+                      </VStack>
                     </VStack>
 
                     {/* 统计信息 */}
